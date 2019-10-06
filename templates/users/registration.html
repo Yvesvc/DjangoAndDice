@@ -1,21 +1,26 @@
 {% extends 'header/header.html'%}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
-<div>
+<div class = 'content-section'>
     <form method = 'POST'>
     {%csrf_token%}
-<fieldset>
-    <legend>
-        Join today
-        {{ form.as_p }}
-    </legend>
-</fieldset>
-        <div>
-            <button type = 'submit'>  Sign up</button>
-        </div>
+        <fieldset class = 'form-group'>
+            <legend class = 'border-bottom mb-4'> Join today </legend>
+        {{ form|crispy }}
+        </fieldset>
+            <div class = 'form-group'>
+        <button class = 'btn btn-outline-info' type = 'submit'>  Sign up</button>
+            </div>
     </form>
 
+
+<div class = 'border-top pt-3'>
+    <small class = 'text-muted'>
+        Already have an account? <a class = 'ml-2' href = '/user/login'> Log in here</a>
+    </small>
+
+</div>
 </div>
 
 {% endblock content%}
