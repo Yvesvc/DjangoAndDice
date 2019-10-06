@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django and Dice</title>
+
+
+
+</head>
+
+
+
+<header>
+
+<div>
+    {% if user.is_authenticated %}
+
+    {% else %}
+
+<a href = "{% url 'login'%}"> login</a>
+    {% endif %}
+</div>
+
+</header>
+
+
+
+<body>
+
+
+
+
+{%block content %}
+{%endblock%}
+</body>
+
+</html>

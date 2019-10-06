@@ -1,0 +1,21 @@
+{% extends 'header/header.html'%}
+
+{% block content %}
+
+<div>
+    <form method = 'POST'>
+    {%csrf_token%}
+<fieldset>
+    <legend>
+        Join today
+        {{ form.as_p }}
+    </legend>
+</fieldset>
+        <div>
+            <button type = 'submit'>  Sign up</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content%}
