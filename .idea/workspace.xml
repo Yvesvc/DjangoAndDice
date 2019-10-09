@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45942244-3e95-42c9-9e51-a3762fd17d1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sheet/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sheet/sheet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoanddice/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoanddice/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoanddice/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoanddice/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/header/header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="36" column="65" lean-forward="true" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
+            <state relative-caret-position="408">
+              <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -249,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570382466754</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-Connected to Heroku&#10;-Start Grid app Sheet">
+      <created>1570474832658</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570474832658</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -278,7 +278,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-Set up django project&#10;-Start authentication and authorization" />
     <MESSAGE value="-Bootstrap login and registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Bootstrap login and registration" />
+    <MESSAGE value="-Connected to Heroku&#10;-Start Grid app Sheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Connected to Heroku&#10;-Start Grid app Sheet" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/users/apps.py">
@@ -395,8 +396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/header/header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="65" lean-forward="true" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
+        <state relative-caret-position="408">
+          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
         </state>
       </provider>
     </entry>
