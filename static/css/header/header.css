@@ -1,54 +1,77 @@
+
+
+
+/*HEADER*/
+
+header {
+height:15vw
+}
+
 #footer {
 background-color:#85144b;
-height:25px;
+height:3.7%;
+}
+
+
+/*
+SHEET
+*/
+
+#grid-wrapper {
+height: 90vh
 }
 
 /* https://www.w3schools.com/css/css_grid.asp*/
 /*all blocks must form a rectangle/square */
-.item1 { grid-area: header; }
-.item2 { grid-area: left; }
-.item3 { grid-area: right; }
-.item4 { grid-area: middle; }
-.item5 { grid-area: other; }
+.char_name { grid-area: char_name; height:5vh; }
 
-.strength { grid-area: strength; }
-.dexterity { grid-area: dexterity; }
-.constitution { grid-area: constitution; }
-.intelligence { grid-area: intelligence; }
-.wisdom { grid-area: wisdom; }
-.charisma { grid-area: charisma; }
+.strength { grid-area: strength; height:12.5vh; width:16vw;}
+.dexterity { grid-area: dexterity; height:12.5vh; width:16vw;}
+.constitution { grid-area: constitution; height:12.5vh; width:16vw;}
+.intelligence { grid-area: intelligence; height:12.5vh; width:16vw;}
+.wisdom { grid-area: wisdom; height:12.5vh; width:16vw;}
+.charisma { grid-area: charisma; height:12.5vh; width:16vw;}
 
-.insp { grid-area: insp; }
-.saving { grid-area: saving; }
-.hitpoint { grid-area: hitpoint; }
+.insp_prof { grid-area: insp_prof; height:10vh;width:31vw;}
+.saving { grid-area: saving;  height:16vh;width:31vw;}
+.skills { grid-area: skills; height:52vh;width:31vw; }
 
+.ac_init_sp { grid-area: ac_init_sp;;width:45vw; }
+.hitpoint { grid-area: hitpoint; ;width:45vw;}
+.dice_death { grid-area: dice_death;;width:45vw;}
+.atk_spell { grid-area: atk_spell;width:45vw;; }
 
-
-
+/* Grid */
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header header'
-    'strength   insp  insp  right  right  right'
-    'strength   insp  insp  right  right  right'
-    'dexterity   insp  insp  right  right  right'
-    'dexterity   saving  saving  hitpoint  hitpoint  hitpoint'
-    'constitution   saving  saving  hitpoint  hitpoint  hitpoint'
-    'constitution   saving  saving  hitpoint  hitpoint  hitpoint'
-    'intelligence   other  other  other  other  other'
-    'intelligence   other  other  other  other  other'
-    'wisdom   other  other  other  other  other'
-    'wisdom   other  other  other  other  other'
-    'charisma   other  other  other  other  other'
-    'charisma   other  other  other  other  other';
+    'char_name      char_name   char_name   char_name   char_name   char_name'
+    'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
+    'strength       saving   saving   ac_init_sp  ac_init_sp  ac_init_sp'
+    'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
+    'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
+    'constitution   skills      skills      hitpoint    hitpoint    hitpoint'
+    'constitution   skills      skills      dice_death  dice_death  dice_death'
+    'intelligence   skills      skills      dice_death  dice_death  dice_death'
+    'intelligence   skills      skills      atk_spell   atk_spell   atk_spell'
+    'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
+    'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
+    'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
+    'charisma       skills      skills      atk_spell   atk_spell   atk_spell';
   grid-gap: 5px;
   background-color: #2196F3;
   padding: 5px;
+  background-color:red;
 }
 
+/* Grid cells*/
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 10px 0;
   font-size: 10px;
+
 }
+
+.test123 {
+display:inline;
+height:100px;}
