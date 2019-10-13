@@ -80,12 +80,14 @@ WSGI_APPLICATION = 'djangoanddice.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+
+postgresql_password = env('DJANGOANDDICE_POSTGRES')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djangoanddice_db',
         'USER': 'postgres',
-        'PASSWORD': env('DJANGOANDDICE_POSTGRES'),
+        'PASSWORD': postgresql_password,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
