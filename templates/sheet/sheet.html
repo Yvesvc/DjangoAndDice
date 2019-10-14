@@ -1,8 +1,10 @@
 {% extends 'header/header.html'%}
 {% block content %}
 
-<div id = grid-wrapper>
-  <div class="grid-container">
+<form action="/name" method="post">
+    {% csrf_token %}
+<div id = grid-wrapper-1>
+  <div class="grid-container-1">
 
 
     <div class="char_name">char_name</div>
@@ -25,5 +27,25 @@
 
 
   </div>
+
+
 </div>
+
+<div id = grid-wrapper-2>
+  <div class="grid-container-2">
+
+    <div class="pass_wis">pass_wis</div>
+    <div class="oth_prof_lan">oth_prof_lan</div>
+    <div class="features_traits">char_name</div>
+
+  </div>
+</div>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+<br>
+<br>
+
 {% endblock content%}

@@ -1,3 +1,4 @@
 from django.contrib import admin
+from sheet.models import Sheet
 
-# Register your models here.
+admin.site.register(Sheet)
