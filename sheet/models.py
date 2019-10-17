@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from users.models import User_Extended
 
 class Sheet(models.Model):
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    username = models.ForeignKey(User_Extended, on_delete=models.CASCADE)
     strength = models.PositiveSmallIntegerField()
     strength_mod = models.PositiveSmallIntegerField()
     dexterity = models.PositiveSmallIntegerField()

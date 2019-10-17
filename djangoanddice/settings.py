@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'djangoanddice.herokuapp.com']
 
+AUTH_USER_MODEL = "users.User_Extended"
 
 # Application definition
 
