@@ -1,6 +1,7 @@
 {% extends 'header/header.html'%}
 {% block content %}
 
+
 <form action="/name" method="post">
     {% csrf_token %}
 <div id = grid-wrapper-1>
@@ -9,21 +10,97 @@
 
     <div class="char_name">{{user.charactername}}</div>
 
-    <div class="strength">strength</div>
-    <div class="dexterity">dexterity</div>
-    <div class="constitution">constitution</div>
-    <div class="intelligence">intelligence</div>
-    <div class="wisdom">wisdom</div>
-    <div class="charisma">charisma</div>
+    <div class="strength">
+      strength
+      <div class = "form_item"> {{form.strength}}</div>
+      <div class = "form_item">{{form.strength_mod}}</div>
+    </div>
+    <div class="dexterity">
+      dexterity
+      <div class = "form_item">{{form.dexterity}}</div>
+      <div class = "form_item">{{form.dexterity_mod}}</div>
+    </div>
+    <div class="constitution">
+      constitution
+      <div class = "form_item">{{form.constitution}}</div>
+      <div class = "form_item">{{form.constitution_mod}}</div>
+    </div>
+    <div class="intelligence">
+      intelligence
+      <div class = "form_item">{{form.intelligence}}</div>
+      <div class = "form_item">{{form.intelligence_mod}}</div>
+    </div>
+    <div class="wisdom">
+      wisdom
+      <div class = "form_item">{{form.wisdom}}</div>
+      <div class = "form_item">{{form.wisdom_mod}}</div>
+    </div>
+    <div class="charisma">
+      charisma
+      <div class = "form_item">{{form.charisma}}</div>
+      <div class = "form_item">{{form.charisma_mod}}</div>
+    </div>
 
-    <div class="insp_prof">insp_prof</div>
-    <div class="saving">saving</div>
-    <div class="skills">skills</div>
+    <div class="insp_prof">
+      insp_prof
+      <div class = "form_item">{{form.inspiration}}</div>
+      <div class = "form_item">{{form.proficiency}}</div>
+    </div>
+    <div class="saving">
+      saving
+      <div class = "form_item" >{{form.sav_strength}}</div>
+      <div class = "form_item">{{form.sav_dexterity}}</div>
+      <div class = "form_item">{{form.sav_constitution}}</div>
+      <div class = "form_item">{{form.sav_intelligence}}</div>
+      <div class = "form_item">{{form.sav_wisdom}}</div>
+      <div class = "form_item">{{form.sav_charisma}}</div>
+    </div>
+    <div class="skills">
+      skills
+      <div class = "form_item">{{form.acrobatics}}</div>
+      <div class = "form_item">{{form.animal_handling}}</div>
+      <div class = "form_item">{{form.arcana}}</div>
+      <div class = "form_item">{{form.athletics}}</div>
+      <div class = "form_item">{{form.deception}}</div>
+      <div class = "form_item">{{form.history}}</div>
+      <div class = "form_item">{{form.insight}}</div>
+      <div class = "form_item">{{form.intimidation}}</div>
+      <div class = "form_item">{{form.investigation}}</div>
+      <div class = "form_item">{{form.medicine}}</div>
+      <div class = "form_item">{{form.nature}}</div>
+      <div class = "form_item">{{form.perception}}</div>
+      <div class = "form_item">{{form.performance}}</div>
+      <div class = "form_item">{{form.persuasion}}</div>
+      <div class = "form_item">{{form.religion}}</div>
+      <div class = "form_item">{{form.sleight_hand}}</div>
+      <div class = "form_item">{{form.stealth}}</div>
+      <div class = "form_item">{{form.survival}}</div>
 
-    <div class="ac_init_sp">ac_init_sp</div>
-    <div class="hitpoint">hitpoint</div>
-    <div class="dice_death">dice_death</div>
-    <div class="atk_spell">atk_spell</div>
+    </div>
+
+    <div class="ac_init_sp">
+      ac_init_sp
+      <div>{{form.armor_class}}</div>
+      <div>{{form.initiative}}</div>
+      <div>{{form.speed}}</div>
+    </div>
+    <div class="hitpoint">
+      hitpoint
+     <div>{{form.hp_curr}}</div>
+     <div>{{form.hp_temp}}</div>
+    </div>
+    <div class="dice_death">
+     dice_death
+     <div>{{form.hit_dice}}</div>
+     <div>{{form.dth_succ}}</div>
+     <div>{{form.dth_fail}}</div>
+    </div>
+    <div class="atk_spell">
+     atk_spell
+     <div>{{form.atk_spell_name}}</div>
+     <div>{{form.atk_spell_bonus}}</div>
+     <div>{{form.atk_spell_type}}</div>
+    </div>
 
 
   </div>

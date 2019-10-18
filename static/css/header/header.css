@@ -104,3 +104,9 @@ height:100px;
   font-size: 10px;
 
 }
+
+/*Form fields */
+
+.form_item {
+background-color:red;
+}
