@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 from users.models import User_Extended
 
 class Sheet(models.Model):
-    username = models.ForeignKey(User_Extended, on_delete=models.CASCADE)
+    #link username to username in User_Extended
+    username = models.ForeignKey(User_Extended, to_field = "username", default = None,on_delete=models.CASCADE)
+    level = models.PositiveSmallIntegerField(default = 0)
     strength = models.PositiveSmallIntegerField()
     strength_mod = models.PositiveSmallIntegerField()
     dexterity = models.PositiveSmallIntegerField()
