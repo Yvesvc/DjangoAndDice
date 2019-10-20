@@ -2,13 +2,18 @@
 {% block content %}
 
 
-<form action="/name" method="post">
+<form method="post">
     {% csrf_token %}
-<div id = grid-wrapper-1>
+
+    <div id = grid-wrapper-1>
   <div class="grid-container-1">
 
 
-    <div class="char_name">{{user.charactername}}</div>
+    <div class="char">
+        <div>{{user.charactername}}</div>
+        <div>{{form.level}} </div>
+    </div>
+
 
     <div class="strength">
       strength
@@ -48,7 +53,7 @@
     </div>
     <div class="saving">
       saving
-      <div class = "form_item" >{{form.sav_strength}}</div>
+      <div class = "form_item">{{form.sav_strength}}</div>
       <div class = "form_item">{{form.sav_dexterity}}</div>
       <div class = "form_item">{{form.sav_constitution}}</div>
       <div class = "form_item">{{form.sav_intelligence}}</div>
@@ -58,23 +63,41 @@
     <div class="skills">
       skills
       <div class = "form_item">{{form.acrobatics}}</div>
+      <div class = "form_item">{{form.acrobatics_circ}}</div>
       <div class = "form_item">{{form.animal_handling}}</div>
+        <div class = "form_item">{{form.animal_handling_circ}}</div>
       <div class = "form_item">{{form.arcana}}</div>
+        <div class = "form_item">{{form.arcana_circ}}</div>
       <div class = "form_item">{{form.athletics}}</div>
+        <div class = "form_item">{{form.athletics_circ}}</div>
       <div class = "form_item">{{form.deception}}</div>
+        <div class = "form_item">{{form.deception_circ}}</div>
       <div class = "form_item">{{form.history}}</div>
+        <div class = "form_item">{{form.history_circ}}</div>
       <div class = "form_item">{{form.insight}}</div>
+        <div class = "form_item">{{form.insight_circ}}</div>
       <div class = "form_item">{{form.intimidation}}</div>
+        <div class = "form_item">{{form.intimidation_circ}}</div>
       <div class = "form_item">{{form.investigation}}</div>
+        <div class = "form_item">{{form.investigation_circ}}</div>
       <div class = "form_item">{{form.medicine}}</div>
+        <div class = "form_item">{{form.medicine_circ}}</div>
       <div class = "form_item">{{form.nature}}</div>
+        <div class = "form_item">{{form.nature_circ}}</div>
       <div class = "form_item">{{form.perception}}</div>
+        <div class = "form_item">{{form.perception_circ}}</div>
       <div class = "form_item">{{form.performance}}</div>
+        <div class = "form_item">{{form.performance_circ}}</div>
       <div class = "form_item">{{form.persuasion}}</div>
+        <div class = "form_item">{{form.persuasion_circ}}</div>
       <div class = "form_item">{{form.religion}}</div>
+        <div class = "form_item">{{form.religion_circ}}</div>
       <div class = "form_item">{{form.sleight_hand}}</div>
+        <div class = "form_item">{{form.sleight_hand_circ}}</div>
       <div class = "form_item">{{form.stealth}}</div>
+        <div class = "form_item">{{form.stealth_circ}}</div>
       <div class = "form_item">{{form.survival}}</div>
+        <div class = "form_item">{{form.survival_circ}}</div>
 
     </div>
 
@@ -102,6 +125,11 @@
      <div>{{form.atk_spell_type}}</div>
     </div>
 
+      <div>{{form.pass_wisdom}}</div>
+      <div>{{form.oth_prof_lang}}</div>
+      <div>{{form.feat_trait}}</div>
+
+
 
   </div>
 
@@ -117,6 +145,7 @@
 
   </div>
 </div>
+
 
     <input type="submit" value="Submit">
 </form>
