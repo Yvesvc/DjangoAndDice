@@ -46,8 +46,8 @@ height: 90vh
   display: grid;
   grid-template-areas:
     'char_name      char_name   char_name   char_name   char_name   char_name'
-    'strength       insp_prof   insp_profn   ac_init_sp  ac_init_sp  ac_init_sp'
-    'strength       saving   saving   ac_init_sp  ac_init_sp  ac_init_sp'
+    'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
+    'strength       saving      saving      ac_init_sp  ac_init_sp  ac_init_sp'
     'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
     'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
     'constitution   skills      skills      hitpoint    hitpoint    hitpoint'
@@ -61,7 +61,7 @@ height: 90vh
   grid-gap: 2px;
   background-color: #2196F3;
   padding: 2px;
-  background-color:red;
+  background-color:white;
 }
 
 /* Grid cells*/
@@ -72,10 +72,6 @@ height: 90vh
 
 }
 
-.test123 {
-display:inline;
-height:100px;
-}
 
 
 /* Grid 2 */
@@ -94,19 +90,72 @@ height:100px;
   grid-gap: 2px;
   background-color: #2196F3;
   padding: 2px;
-  background-color:red;
+  background-color:white;
 }
 
 /* Grid cells*/
 .grid-container-2 > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   text-align: center;
   font-size: 10px;
 
 }
 
+/*Form general CSS */
+
+/*Middle columns*/
+.col_mid {
+width:70%;
+margin-left:14%;
+}
+
+/*Border*/
+.border_2px {
+  border: 2px solid #73AD21;
+  border-radius:5px;
+}
+
 /*Form fields */
 
-.form_item {
-background-color:red;
+/*char_name*/
+.vertical_align {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*Attribute*/
+.attribute {
+  border: 2px solid #73AD21;
+  border-radius:5px;
+}
+
+/*ins_prof*/
+
+
+#insp_el11 {
+padding-left:0;
+}
+
+#insp_el12 {
+font-size:5pt;
+}
+
+#insp_el21 {
+padding-left:0;
+}
+
+#insp_el22 {
+font-size:5pt;
+}
+
+/*Saving */
+.saving {
+height:44vw;
+}
+
+.saving_row {
+padding-left:4pt;
+padding-bottom:1pt;
 }
