@@ -63,7 +63,7 @@ class Sheet(models.Model):
     religion = models.SmallIntegerField(blank = True, null = True)
     religion_circ= models.BooleanField(default=False)
     sleight_hand = models.SmallIntegerField(blank = True, null = True)
-    sleigth_hand_circ= models.BooleanField(default=False)
+    sleight_hand_circ= models.BooleanField(default=False)
     stealth = models.SmallIntegerField(blank = True, null = True)
     stealth_circ= models.BooleanField(default=False)
     survival = models.SmallIntegerField(blank = True, null = True)

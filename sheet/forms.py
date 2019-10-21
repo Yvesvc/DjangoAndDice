@@ -2,6 +2,11 @@ from django import forms
 
 from .models import Sheet
 
+
+#style
+sav_value = 'width:5vw; text-align:center'
+skill_value = 'width:5vw; text-align:center'
+
 class Sheet_Form(forms.ModelForm):
 
     class Meta:
@@ -32,16 +37,40 @@ class Sheet_Form(forms.ModelForm):
             'proficiency': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
 
             #Saving
+
+
             'sav_strength_circ': forms.CheckboxInput(attrs={}),
-            'sav_strength': forms.NumberInput(attrs={'style': 'width:5vw; text-align:center'}),
+            'sav_strength': forms.NumberInput(attrs={'style': sav_value}),
             'sav_dexterity_circ': forms.CheckboxInput(attrs={}),
-            'sav_dexterity': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
+            'sav_dexterity': forms.NumberInput(attrs={'style': sav_value}),
             'sav_constitution_circ': forms.CheckboxInput(attrs={}),
-            'sav_constitution': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
+            'sav_constitution': forms.NumberInput(attrs={'style': sav_value}),
             'sav_intelligence_circ': forms.CheckboxInput(attrs={}),
-            'sav_intelligence': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
+            'sav_intelligence': forms.NumberInput(attrs={'style': sav_value}),
             'sav_wisdom_circ': forms.CheckboxInput(attrs={}),
-            'sav_wisdom': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
+            'sav_wisdom': forms.NumberInput(attrs={'style': sav_value}),
             'sav_charisma_circ': forms.CheckboxInput(attrs={}),
-            'sav_charisma': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'})
+            'sav_charisma': forms.NumberInput(attrs={'style': sav_value}),
+
+            #Skills
+            'acrobatics': forms.NumberInput(attrs={'style': skill_value}),
+            'animal_handling': forms.NumberInput(attrs={'style': skill_value}),
+            'arcana': forms.NumberInput(attrs={'style': skill_value}),
+            'athletics': forms.NumberInput(attrs={'style': skill_value}),
+            'deception': forms.NumberInput(attrs={'style': skill_value}),
+            'history': forms.NumberInput(attrs={'style': skill_value}),
+            'insight': forms.NumberInput(attrs={'style': skill_value}),
+            'intimidation': forms.NumberInput(attrs={'style': skill_value}),
+            'investigation': forms.NumberInput(attrs={'style': skill_value}),
+            'medicine': forms.NumberInput(attrs={'style': skill_value}),
+            'nature': forms.NumberInput(attrs={'style': skill_value}),
+            'perception': forms.NumberInput(attrs={'style': skill_value}),
+            'performance': forms.NumberInput(attrs={'style': skill_value}),
+            'persuasion': forms.NumberInput(attrs={'style': skill_value}),
+            'religion': forms.NumberInput(attrs={'style': skill_value}),
+            'sleight_hand': forms.NumberInput(attrs={'style': skill_value}),
+            'stealth': forms.NumberInput(attrs={'style': skill_value}),
+            'survival': forms.NumberInput(attrs={'style': skill_value}),
+
+
         }

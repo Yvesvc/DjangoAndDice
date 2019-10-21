@@ -6,44 +6,45 @@
 <form id = "Sheet_form" method="post">
     {% csrf_token %}
 
-    <div id = grid-wrapper-1>
+  <div id = grid-wrapper-1>
+
   <div class="grid-container-1">
 
 
     <div class="char_name">
         <div class = "row vertical_align">
-        <div class = "col">{{user.charactername}}</div>
-            <div class = "col">  lvl: {{form.level}}</div>
-            </div>
+          <div class = "col">{{user.charactername}}</div>
+          <div class = "col">  lvl: {{form.level}}</div>
+        </div>
     </div>
 
 
-    <div class="strength attribute">
+    <div class="strength attribute col_left">
         strength
         <div class = "form_item">{{form.strength}}</div>
         <div class = "form_item">{{form.strength_mod}}</div>
-        </div>
-    <div class="dexterity attribute">
+    </div>
+    <div class="dexterity attribute col_left">
       dexterity
       <div class = "form_item">{{form.dexterity}}</div>
       <div class = "form_item">{{form.dexterity_mod}}</div>
     </div>
-    <div class="constitution attribute">
+    <div class="constitution attribute col_left">
       constitution
       <div class = "form_item">{{form.constitution}}</div>
       <div class = "form_item">{{form.constitution_mod}}</div>
     </div>
-    <div class="intelligence attribute">
+    <div class="intelligence attribute col_left">
       intelligence
       <div class = "form_item">{{form.intelligence}}</div>
       <div class = "form_item">{{form.intelligence_mod}}</div>
     </div>
-    <div class="wisdom attribute">
+    <div class="wisdom attribute col_left">
       wisdom
       <div class = "form_item">{{form.wisdom}}</div>
       <div class = "form_item">{{form.wisdom_mod}}</div>
     </div>
-    <div class="charisma attribute">
+    <div class="charisma attribute col_left">
       charisma
       <div class = "form_item">{{form.charisma}}</div>
       <div class = "form_item">{{form.charisma_mod}}</div>
@@ -60,128 +61,166 @@
         </div>
     </div>
 
-    <div class="saving border_2px">
-      saving
+    <div class="saving border_2px col_mid">
       <div class = "row saving_row">
         <div class = "col-2 my-auto form_item">{{form.sav_strength_circ}}</div>
         <div class = "col-2 form_item">{{form.sav_strength}}</div>
-        <div class = "col-6 saving_col"> STRENGTH</div>
+        <div class = "col-6 saving_col my-auto"> STRENGTH</div>
       </div>
       <div class = "row saving_row">
         <div class = "col-2 my-auto form_item">{{form.sav_dexterity_circ}}</div>
         <div class = "col-2 form_item">{{form.sav_dexterity}}</div>
-        <div class = "col-6 saving_col"> DEXTERITY</div>
+        <div class = "col-6 saving_col my-auto"> DEXTERITY</div>
       </div>
       <div class = "row saving_row">
         <div class = "col-2 my-auto form_item">{{form.sav_constitution_circ}}</div>
         <div class = "col-2 form_item">{{form.sav_constitution}}</div>
-        <div class = "col-6 saving_col"> CONSTITUTION</div>
+        <div class = "col-6 saving_col my-auto"> CONSTITUTION</div>
       </div>
       <div class = "row saving_row">
         <div class = "col-2 my-auto form_item">{{form.sav_intelligence_circ}}</div>
         <div class = "col-2 form_item">{{form.sav_intelligence}}</div>
-        <div class = "col-6 saving_col"> INTELLIGENCE</div>
+        <div class = "col-6 saving_col my-auto"> INTELLIGENCE</div>
         </div>
       <div class = "row saving_row">
         <div class = "col-2 my-auto form_item">{{form.sav_wisdom_circ}}</div>
         <div class = "col-2 form_item">{{form.sav_wisdom}}</div>
-        <div class = "col-6 saving_col"> WISDOM</div>
+        <div class = "col-6 saving_col my-auto"> WISDOM</div>
       </div>
       <div class = "row saving_row">
         <div class = "col-2 my-auto form_item">{{form.sav_charisma_circ}}</div>
         <div class = "col-2 form_item">{{form.sav_charisma}}</div>
-        <div class = "col-6 saving_col"> CHARISMA</div>
+        <div class = "col-6 saving_col my-auto"> CHARISMA</div>
       </div>
     </div>
 
-    <div class="skills">
+    <div class="skills col_mid">
       skills
-      <div class = "form_item">{{form.acrobatics}}</div>
-      <div class = "form_item">{{form.acrobatics_circ}}</div>
-      <div class = "form_item">{{form.animal_handling}}</div>
-        <div class = "form_item">{{form.animal_handling_circ}}</div>
-      <div class = "form_item">{{form.arcana}}</div>
-        <div class = "form_item">{{form.arcana_circ}}</div>
-      <div class = "form_item">{{form.athletics}}</div>
-        <div class = "form_item">{{form.athletics_circ}}</div>
-      <div class = "form_item">{{form.deception}}</div>
-        <div class = "form_item">{{form.deception_circ}}</div>
-      <div class = "form_item">{{form.history}}</div>
-        <div class = "form_item">{{form.history_circ}}</div>
-      <div class = "form_item">{{form.insight}}</div>
-        <div class = "form_item">{{form.insight_circ}}</div>
-      <div class = "form_item">{{form.intimidation}}</div>
-        <div class = "form_item">{{form.intimidation_circ}}</div>
-      <div class = "form_item">{{form.investigation}}</div>
-        <div class = "form_item">{{form.investigation_circ}}</div>
-      <div class = "form_item">{{form.medicine}}</div>
-        <div class = "form_item">{{form.medicine_circ}}</div>
-      <div class = "form_item">{{form.nature}}</div>
-        <div class = "form_item">{{form.nature_circ}}</div>
-      <div class = "form_item">{{form.perception}}</div>
-        <div class = "form_item">{{form.perception_circ}}</div>
-      <div class = "form_item">{{form.performance}}</div>
-        <div class = "form_item">{{form.performance_circ}}</div>
-      <div class = "form_item">{{form.persuasion}}</div>
-        <div class = "form_item">{{form.persuasion_circ}}</div>
-      <div class = "form_item">{{form.religion}}</div>
-        <div class = "form_item">{{form.religion_circ}}</div>
-      <div class = "form_item">{{form.sleight_hand}}</div>
-        <div class = "form_item">{{form.sleight_hand_circ}}</div>
-      <div class = "form_item">{{form.stealth}}</div>
-        <div class = "form_item">{{form.stealth_circ}}</div>
-      <div class = "form_item">{{form.survival}}</div>
-        <div class = "form_item">{{form.survival_circ}}</div>
-
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.acrobatics_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.acrobatics}}</div>
+        <div class = "col-6 my-auto skill_col">Acrobatics (Dex)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.animal_handling_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.animal_handling}}</div>
+        <div class = "col-6 my-auto skill_col">Animal Handling (Wis)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.arcana_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.arcana}}</div>
+        <div class = "col-6 my-auto skill_col">Arcana (Int)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.athletics_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.athletics}}</div>
+        <div class = "col-6 my-auto skill_col">Athletics (Str)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.deception_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.deception}}</div>
+        <div class = "col-6 my-auto skill_col">Deception (Cha)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.history_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.history}}</div>
+        <div class = "col-6 my-auto skill_col">History (Int)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.insight_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.insight}}</div>
+        <div class = "col-6 my-auto skill_col">Insight (Wis) (Wis)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.intimidation_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.intimidation}}</div>
+        <div class = "col-6 my-auto skill_col">Intimidation (Cha)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.investigation_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.investigation}}</div>
+        <div class = "col-6 my-auto skill_col">Investigation (Int)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.medicine_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.medicine}}</div>
+        <div class = "col-6 my-auto skill_col">Medicine (Wis)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.nature_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.nature}}</div>
+        <div class = "col-6 my-auto skill_col">Nature (Int)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.perception_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.perception}}</div>
+        <div class = "col-6 my-auto skill_col">Perception (Wis)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.performance_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.performance}}</div>
+        <div class = "col-6 my-auto skill_col">Performance (Cha)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.persuasion_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.persuasion}}</div>
+        <div class = "col-6 my-auto skill_col">Persuasion (Cha)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.religion_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.religion}}</div>
+        <div class = "col-6 my-auto skill_col">Religion (Int)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.sleight_hand_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.sleight_hand}}</div>
+        <div class = "col-6 my-auto skill_col">Sleight of Hand (Dex)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.stealth_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.stealth}}</div>
+        <div class = "col-6 my-auto skill_col">Stealth (Dex)</div>
+      </div>
+      <div class = "row skill_row">
+        <div class = "col-2 my-auto form_item">{{form.survival_circ}}</div>
+        <div class = "col-2 my-auto form_item">{{form.survival}}</div>
+        <div class = "col-6 my-auto skill_col">Survival (Wis)</div>
+      </div>
     </div>
 
 
-    <div class="ac_init_sp">
+
+    <div class="ac_init_sp col_right">
       ac_init_sp
       <div>{{form.armor_class}}</div>
       <div>{{form.initiative}}</div>
       <div>{{form.speed}}</div>
     </div>
-    <div class="hitpoint">
+    <div class="hitpoint col_right">
       hitpoint
      <div>{{form.hp_curr}}</div>
      <div>{{form.hp_temp}}</div>
     </div>
-    <div class="dice_death">
+    <div class="dice_death col_right">
      dice_death
      <div>{{form.hit_dice}}</div>
      <div>{{form.dth_succ}}</div>
      <div>{{form.dth_fail}}</div>
     </div>
-    <div class="atk_spell">
+    <div class="atk_spell col_right">
      atk_spell
      <div>{{form.atk_spell_name}}</div>
      <div>{{form.atk_spell_bonus}}</div>
      <div>{{form.atk_spell_type}}</div>
     </div>
 
-      <!--
-      <div>{{form.pass_wisdom}}</div>
-      <div>{{form.oth_prof_lang}}</div>
-      <div>{{form.feat_trait}}</div>
-        -->
-
+</div>
 
   </div>
 
 
-</div>
-<!--
-<div id = grid-wrapper-2>
-  <div class="grid-container-2">
 
-    <div class="pass_wis">pass_wis</div>
-    <div class="oth_prof_lan">oth_prof_lan</div>
-    <div class="features_traits">char_name</div>
 
-  </div>
-</div>
--->
 
     <input type="submit" value="Submit">
 </form>

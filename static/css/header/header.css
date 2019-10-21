@@ -16,146 +16,170 @@ height:3.7%;
 SHEET
 */
 
-/* Grid 1 */
-#grid-wrapper-1 {
-height: 90vh
-}
+    /* Grid 1 */
+    #grid-wrapper-1 {
+    height: 90vh
+    }
 
-/* https://www.w3schools.com/css/css_grid.asp*/
-/*all blocks must form a rectangle/square */
-.char_name { grid-area: char_name; height:5vh; }
+        /*Column layout */
+        .col_left {
+        width:16vw;
+        }
 
-.strength { grid-area: strength; height:12.5vh; width:16vw;}
-.dexterity { grid-area: dexterity; height:12.5vh; width:16vw;}
-.constitution { grid-area: constitution; height:12.5vh; width:16vw;}
-.intelligence { grid-area: intelligence; height:12.5vh; width:16vw;}
-.wisdom { grid-area: wisdom; height:12.5vh; width:16vw;}
-.charisma { grid-area: charisma; height:12.5vh; width:16vw;}
+        .col_mid {
+        width:32.5vw;
+        margin-left:2.5vw;
+        }
 
-.insp_prof { grid-area: insp_prof; height:10vh;width:31vw;}
-.saving { grid-area: saving;  height:16vh;width:31vw;}
-.skills { grid-area: skills; height:52vh;width:31vw; }
+        .col_right {
+        width:45vw;
+        }
 
-.ac_init_sp { grid-area: ac_init_sp;width:45vw; }
-.hitpoint { grid-area: hitpoint; width:45vw;}
-.dice_death { grid-area: dice_death;width:45vw;}
-.atk_spell { grid-area: atk_spell;width:45vw; }
+        /* https://www.w3schools.com/css/css_grid.asp*/
+        /*all blocks must form a rectangle/square */
+        .char_name { grid-area: char_name; height:5vh; }
 
+        .strength { grid-area: strength; height:12.5vh;}
+        .dexterity { grid-area: dexterity; height:12.5vh;}
+        .constitution { grid-area: constitution; height:12.5vh;}
+        .intelligence { grid-area: intelligence; height:12.5vh; }
+        .wisdom { grid-area: wisdom; height:12.5vh;}
+        .charisma { grid-area: charisma; height:12.5vh;}
 
-.grid-container-1 {
-  display: grid;
-  grid-template-areas:
-    'char_name      char_name   char_name   char_name   char_name   char_name'
-    'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
-    'strength       saving      saving      ac_init_sp  ac_init_sp  ac_init_sp'
-    'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
-    'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
-    'constitution   skills      skills      hitpoint    hitpoint    hitpoint'
-    'constitution   skills      skills      dice_death  dice_death  dice_death'
-    'intelligence   skills      skills      dice_death  dice_death  dice_death'
-    'intelligence   skills      skills      atk_spell   atk_spell   atk_spell'
-    'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
-    'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
-    'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
-    'charisma       skills      skills      atk_spell   atk_spell   atk_spell';
-  grid-gap: 2px;
-  background-color: #2196F3;
-  padding: 2px;
-  background-color:white;
-}
+        .insp_prof { grid-area: insp_prof; height:10vh;}
+        .saving { grid-area: saving;  height:16vh;}
+        .skills { grid-area: skills; height:52vh; }
 
-/* Grid cells*/
-.grid-container-1 > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  font-size: 10px;
-
-}
+        .ac_init_sp { grid-area: ac_init_sp; }
+        .hitpoint { grid-area: hitpoint;}
+        .dice_death { grid-area: dice_death;}
+        .atk_spell { grid-area: atk_spell;}
 
 
+        .grid-container-1 {
+          display: grid;
+          grid-template-areas:
+            'char_name      char_name   char_name   char_name   char_name   char_name'
+            'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
+            'strength       saving      saving      ac_init_sp  ac_init_sp  ac_init_sp'
+            'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
+            'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
+            'constitution   skills      skills      hitpoint    hitpoint    hitpoint'
+            'constitution   skills      skills      dice_death  dice_death  dice_death'
+            'intelligence   skills      skills      dice_death  dice_death  dice_death'
+            'intelligence   skills      skills      atk_spell   atk_spell   atk_spell'
+            'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
+            'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      skills      atk_spell   atk_spell   atk_spell';
+          grid-gap: 2px;
+          background-color: #2196F3;
+          padding: 2px;
+          background-color:white;
+        }
 
-/* Grid 2 */
+        /* Grid cells*/
+        .grid-container-1 > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          font-size: 10px;
 
-.pass_wis { grid-area: pass_wis;width:100%;}
-.oth_prof_lan { grid-area: oth_prof_lan;width:100%;}
-.features_traits { grid-area: features_traits;width:100%;}
-
-.grid-container-2 {
-  display: grid;
-  grid-template-areas:
-    'pass_wis      pass_wis   pass_wis   pass_wis   pass_wis   pass_wis'
-    'oth_prof_lan      oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan'
-    'features_traits      features_traits   features_traits   features_traits   features_traits   features_traits'
-    ;
-  grid-gap: 2px;
-  background-color: #2196F3;
-  padding: 2px;
-  background-color:white;
-}
-
-/* Grid cells*/
-.grid-container-2 > div {
-  background-color: white;
-  text-align: center;
-  font-size: 10px;
-
-}
-
-/*Form general CSS */
-
-/*Middle columns*/
-.col_mid {
-width:70%;
-margin-left:14%;
-}
-
-/*Border*/
-.border_2px {
-  border: 2px solid #73AD21;
-  border-radius:5px;
-}
-
-/*Form fields */
-
-/*char_name*/
-.vertical_align {
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-/*Attribute*/
-.attribute {
-  border: 2px solid #73AD21;
-  border-radius:5px;
-}
-
-/*ins_prof*/
+        }
 
 
-#insp_el11 {
-padding-left:0;
-}
 
-#insp_el12 {
-font-size:5pt;
-}
+    /* Grid 2 */
 
-#insp_el21 {
-padding-left:0;
-}
+    .pass_wis { grid-area: pass_wis;width:100%;}
+    .oth_prof_lan { grid-area: oth_prof_lan;width:100%;}
+    .features_traits { grid-area: features_traits;width:100%;}
 
-#insp_el22 {
-font-size:5pt;
-}
+    .grid-container-2 {
+      display: grid;
+      grid-template-areas:
+        'pass_wis      pass_wis   pass_wis   pass_wis   pass_wis   pass_wis'
+        'oth_prof_lan      oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan'
+        'features_traits      features_traits   features_traits   features_traits   features_traits   features_traits'
+        ;
+      grid-gap: 2px;
+      background-color: #2196F3;
+      padding: 2px;
+      background-color:white;
+    }
 
-/*Saving */
-.saving {
-height:44vw;
-}
+    /* Grid cells*/
+    .grid-container-2 > div {
+      background-color: white;
+      text-align: center;
+      font-size: 10px;
 
-.saving_row {
-padding-left:4pt;
-padding-bottom:1pt;
-}
+    }
+
+    /*Form general CSS */
+
+
+    /*Border*/
+    .border_2px {
+      border: 2px solid #73AD21;
+      border-radius:5px;
+    }
+
+    /*Form fields */
+
+    /*char_name*/
+    .vertical_align {
+      position: relative;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    /*Attribute*/
+    .attribute {
+      border: 2px solid #73AD21;
+      border-radius:5px;
+    }
+
+    /*ins_prof*/
+
+
+    #insp_el11 {
+    padding-left:0;
+    }
+
+    #insp_el12 {
+    font-size:5pt;
+    }
+
+    #insp_el21 {
+    padding-left:0;
+    }
+
+    #insp_el22 {
+    font-size:5pt;
+    }
+
+    /*Saving */
+    .saving {
+    height:44vw;
+    padding-top:2vw;
+    }
+
+    .saving_row {
+    padding-left:4pt;
+    padding-bottom:1pt;
+    }
+
+    .saving_col {
+    font-size: 2vw;
+    }
+
+    /*Skills*/
+
+    .skill_col {
+    font-size: 2vw;
+    }
+
+    .skill_row {
+    padding-bottom: 1pt;
+    }
