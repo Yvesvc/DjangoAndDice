@@ -61,15 +61,15 @@ SHEET
           grid-template-areas:
             'char_name      char_name   char_name   char_name   char_name   char_name'
             'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
-            'strength       saving      saving      ac_init_sp  ac_init_sp  ac_init_sp'
+            'strength       saving      saving      hitpoint    hitpoint      hitpoint'
             'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
-            'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
-            'constitution   skills      skills      hitpoint    hitpoint    hitpoint'
+            'constitution   saving      saving      hitpoint    hitpoint    hitpoint'
             'constitution   skills      skills      dice_death  dice_death  dice_death'
             'intelligence   skills      skills      dice_death  dice_death  dice_death'
             'intelligence   skills      skills      atk_spell   atk_spell   atk_spell'
             'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
             'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
             'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
             'charisma       skills      skills      atk_spell   atk_spell   atk_spell';
           grid-gap: 2px;
@@ -180,6 +180,77 @@ SHEET
     font-size: 2vw;
     }
 
+    .skill_col_ani {
+    font-size: 1.75vw;
+    }
+
     .skill_row {
-    padding-bottom: 1pt;
+    padding-bottom: 2pt;
+    }
+
+    /*Armor class, Initiative, Speeds */
+    .ac_init_sp {
+    margin-left:3vw;
+    height:15vw;
+    width:90%;
+    }
+
+    .ac_init_sp_txt {
+     font-size: 2vw;
+     }
+
+     #ac_init_sp_txt_ac{
+     font-size: 1.75vw;
+     }
+
+     /*Hitpoints*/
+     .hitpoint{
+     margin-left:0vw;
+     text-align:center;
+     }
+
+     /*Dice death */
+     .dice_death {
+     height:15vw;
+     margin-left:2vw;
+     }
+
+     .dice_death_right {
+     height:50%;
+     }
+
+     .dice_death_right_txt{
+     font-size:1.7vw;
+     }
+
+     .dice_death_txt{
+     text-align:center;
+     font-size:1.75vw;
+     }
+
+
+    /*atk_spell*/
+
+    .atk_spell_values{
+    height:80%;
+    }
+
+    .atk_spell_info{
+    height:5%;
+    font-size:5pt;
+    }
+    .atk_spell_row{
+    height:20%;
+    }
+
+    .atk_spell_row_col_1{
+    width:40%;
+    }
+
+    .atk_spell_row_col_2{
+    width:20%;
+    }
+
+    .atk_spell_row_col_3{
+    width:40%;
     }

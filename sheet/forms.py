@@ -6,6 +6,15 @@ from .models import Sheet
 #style
 sav_value = 'width:5vw; text-align:center'
 skill_value = 'width:5vw; text-align:center'
+attr_std = 'width:50%; text-align:center'
+attr_mod = 'width:25%; text-align:center'
+ac_init_sp = 'width:9vw; height:9vw; text-align:center'
+hitp = 'width:24vw; height:13vw; text-align:center'
+dice_dth_left = 'width:17vw; height:100%; text-align:center'
+dice_dth_right = 'width:8vw; height:100%; text-align:center'
+atk_spell = 'width:90%;'
+
+
 
 class Sheet_Form(forms.ModelForm):
 
@@ -19,18 +28,18 @@ class Sheet_Form(forms.ModelForm):
             'level': forms.NumberInput(attrs = {'style': 'width:20%; text-align:center'}),
 
             #Attributes
-            'strength': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
-            'strength_mod': forms.NumberInput(attrs={'style': 'width:25%; text-align:center'}),
-            'dexterity': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
-            'dexterity_mod': forms.NumberInput(attrs={'style': 'width:25%; text-align:center'}),
-            'constitution': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
-            'constitution_mod': forms.NumberInput(attrs={'style': 'width:25%; text-align:center'}),
-            'intelligence': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
-            'intelligence_mod': forms.NumberInput(attrs={'style': 'width:25%; text-align:center'}),
-            'wisdom': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
-            'wisdom_mod': forms.NumberInput(attrs={'style': 'width:25%; text-align:center'}),
-            'charisma': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
-            'charisma_mod': forms.NumberInput(attrs={'style': 'width:25%; text-align:center'}),
+            'strength': forms.NumberInput(attrs={'style': attr_std}),
+            'strength_mod': forms.NumberInput(attrs={'style': attr_mod}),
+            'dexterity': forms.NumberInput(attrs={'style': attr_std}),
+            'dexterity_mod': forms.NumberInput(attrs={'style': attr_mod}),
+            'constitution': forms.NumberInput(attrs={'style': attr_std}),
+            'constitution_mod': forms.NumberInput(attrs={'style': attr_mod}),
+            'intelligence': forms.NumberInput(attrs={'style': attr_std}),
+            'intelligence_mod': forms.NumberInput(attrs={'style': attr_mod}),
+            'wisdom': forms.NumberInput(attrs={'style': attr_std}),
+            'wisdom_mod': forms.NumberInput(attrs={'style': attr_mod}),
+            'charisma': forms.NumberInput(attrs={'style': attr_std}),
+            'charisma_mod': forms.NumberInput(attrs={'style': attr_mod}),
 
             #Ins_pro
             'inspiration': forms.NumberInput(attrs={'style': 'width:50%; text-align:center'}),
@@ -72,5 +81,39 @@ class Sheet_Form(forms.ModelForm):
             'stealth': forms.NumberInput(attrs={'style': skill_value}),
             'survival': forms.NumberInput(attrs={'style': skill_value}),
 
+            #Armor class, Initiative, Speed
+            'armor_class': forms.TextInput(attrs={'style': ac_init_sp}),
+            'initiative': forms.NumberInput(attrs={'style': ac_init_sp}),
+            'speed': forms.NumberInput(attrs={'style': ac_init_sp}),
+            
+            #Hitpoint
+            'hp_curr': forms.NumberInput(attrs={'style': hitp}),
+            'hp_temp': forms.NumberInput(attrs={'style': hitp}),
+
+            #Dice_death
+            'hit_dice': forms.TextInput(attrs={'style': dice_dth_left}),
+            'dth_succ': forms.NumberInput(attrs={'style': dice_dth_right}),
+            'dth_fail': forms.NumberInput(attrs={'style': dice_dth_right}),
+
+            #atk_spell
+            'atk_spell_name_1': forms.TextInput(attrs={'style': atk_spell}),
+            'atk_spell_bonus_1': forms.NumberInput(attrs={'style': atk_spell}),
+            'atk_spell_type_1': forms.TextInput(attrs={'style': atk_spell}),
+
+            'atk_spell_name_2': forms.TextInput(attrs={'style': atk_spell}),
+            'atk_spell_bonus_2': forms.NumberInput(attrs={'style': atk_spell}),
+            'atk_spell_type_2': forms.TextInput(attrs={'style': atk_spell}),
+
+            'atk_spell_name_3': forms.TextInput(attrs={'style': atk_spell}),
+            'atk_spell_bonus_3': forms.NumberInput(attrs={'style': atk_spell}),
+            'atk_spell_type_3': forms.TextInput(attrs={'style': atk_spell}),
+
+            'atk_spell_name_4': forms.TextInput(attrs={'style': atk_spell}),
+            'atk_spell_bonus_4': forms.NumberInput(attrs={'style': atk_spell}),
+            'atk_spell_type_4': forms.TextInput(attrs={'style': atk_spell}),
+
+            'atk_spell_name_5': forms.TextInput(attrs={'style': atk_spell}),
+            'atk_spell_bonus_5': forms.NumberInput(attrs={'style': atk_spell}),
+            'atk_spell_type_5': forms.TextInput(attrs={'style': atk_spell}),
 
         }
