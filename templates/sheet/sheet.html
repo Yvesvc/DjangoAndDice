@@ -6,15 +6,16 @@
 <form id = "Sheet_form" method="post">
     {% csrf_token %}
 
-  <div id = grid-wrapper-1>
+  <div id = "grid-wrapper-1" >
 
-  <div class="grid-container-1">
+  <div class="grid-container-1 color_1">
 
 
     <div class="char_name">
         <div class = "row vertical_align">
-          <div class = "col">{{user.charactername}}</div>
-          <div class = "col">  lvl: {{form.level}}</div>
+          <div class = "col-2"><input type="submit" value="Update"></div>
+          <div id = "charactername" class = "col-6 my-auto">{{user.charactername}}</div>
+          <div class = "col-4 my-auto">  lvl: {{form.level}}</div>
         </div>
     </div>
 
@@ -95,105 +96,104 @@
     </div>
 
     <div class="skills col_mid">
-      skills
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.acrobatics_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.acrobatics}}</div>
-        <div class = "col-6 my-auto skill_col">Acrobatics (Dex)</div>
+        <div class = "skill_col_1 my-auto ">{{form.acrobatics_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.acrobatics}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Acrobatics (Dex)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.animal_handling_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.animal_handling}}</div>
-        <div class = "col-6 my-auto skill_col skill_col_ani">Animal Handling (Wis)</div>
+        <div class = "skill_col_1 my-auto ">{{form.animal_handling_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.animal_handling}}</div>
+        <div class = "skill_col_3 my-auto skill_col skill_col_ani">Animal Handling (Wis)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.arcana_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.arcana}}</div>
-        <div class = "col-6 my-auto skill_col">Arcana (Int)</div>
+        <div class = "skill_col_1 my-auto ">{{form.arcana_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.arcana}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Arcana (Int)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.athletics_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.athletics}}</div>
-        <div class = "col-6 my-auto skill_col">Athletics (Str)</div>
+        <div class = "skill_col_1 my-auto ">{{form.athletics_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.athletics}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Athletics (Str)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.deception_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.deception}}</div>
-        <div class = "col-6 my-auto skill_col">Deception (Cha)</div>
+        <div class = "skill_col_1 my-auto ">{{form.deception_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.deception}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Deception (Cha)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.history_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.history}}</div>
-        <div class = "col-6 my-auto skill_col">History (Int)</div>
+        <div class = "skill_col_1 my-auto ">{{form.history_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.history}}</div>
+        <div class = "skill_col_3 my-auto skill_col">History (Int)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.insight_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.insight}}</div>
-        <div class = "col-6 my-auto skill_col">Insight (Wis) (Wis)</div>
+        <div class = "skill_col_1 my-auto ">{{form.insight_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.insight}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Insight (Wis) (Wis)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.intimidation_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.intimidation}}</div>
-        <div class = "col-6 my-auto skill_col">Intimidation (Cha)</div>
+        <div class = "skill_col_1 my-auto ">{{form.intimidation_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.intimidation}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Intimidation (Cha)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.investigation_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.investigation}}</div>
-        <div class = "col-6 my-auto skill_col">Investigation (Int)</div>
+        <div class = "skill_col_1 my-auto ">{{form.investigation_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.investigation}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Investigation (Int)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.medicine_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.medicine}}</div>
-        <div class = "col-6 my-auto skill_col">Medicine (Wis)</div>
+        <div class = "skill_col_1 my-auto ">{{form.medicine_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.medicine}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Medicine (Wis)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.nature_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.nature}}</div>
-        <div class = "col-6 my-auto skill_col">Nature (Int)</div>
+        <div class = "skill_col_1 my-auto ">{{form.nature_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.nature}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Nature (Int)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.perception_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.perception}}</div>
-        <div class = "col-6 my-auto skill_col">Perception (Wis)</div>
+        <div class = "skill_col_1 my-auto ">{{form.perception_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.perception}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Perception (Wis)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.performance_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.performance}}</div>
-        <div class = "col-6 my-auto skill_col">Performance (Cha)</div>
+        <div class = "skill_col_1 my-auto ">{{form.performance_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.performance}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Performance (Cha)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.persuasion_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.persuasion}}</div>
-        <div class = "col-6 my-auto skill_col">Persuasion (Cha)</div>
+        <div class = "skill_col_1 my-auto ">{{form.persuasion_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.persuasion}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Persuasion (Cha)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.religion_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.religion}}</div>
-        <div class = "col-6 my-auto skill_col">Religion (Int)</div>
+        <div class = "skill_col_1 my-auto ">{{form.religion_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.religion}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Religion (Int)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.sleight_hand_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.sleight_hand}}</div>
-        <div class = "col-6 my-auto skill_col">Sleight of Hand (Dex)</div>
+        <div class = "skill_col_1 my-auto ">{{form.sleight_hand_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.sleight_hand}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Sleight of Hand (Dex)</div>
       </div>
       <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.stealth_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.stealth}}</div>
-        <div class = "col-6 my-auto skill_col">Stealth (Dex)</div>
+        <div class = "skill_col_1 my-auto ">{{form.stealth_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.stealth}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Stealth (Dex)</div>
       </div>
-      <div class = "row skill_row">
-        <div class = "col-2 my-auto form_item">{{form.survival_circ}}</div>
-        <div class = "col-2 my-auto form_item">{{form.survival}}</div>
-        <div class = "col-6 my-auto skill_col">Survival (Wis)</div>
+      <div class = "row skill_row skill_row_last">
+        <div class = "skill_col_1 my-auto ">{{form.survival_circ}}</div>
+        <div class = "skill_col_2 my-auto ">{{form.survival}}</div>
+        <div class = "skill_col_3 my-auto skill_col">Survival (Wis)</div>
       </div>
     </div>
 
 
 
     <div class=" row ac_init_sp col_right ">
-      <div class = "col-4 my-auto">{{form.armor_class}}<div class ="ac_init_sp_txt" id = "ac_init_sp_txt_ac"> <br>ARMOR CLASS </div></div>
-      <div class = "col-4 my-auto">{{form.initiative}}<div class ="ac_init_sp_txt"> <br>INITIATIVE </div></div>
-      <div class = "col-4 my-auto">{{form.speed}}<div class ="ac_init_sp_txt"> <br>SPEED </div></div>
+      <div class = "col-4 my-auto color_4">{{form.armor_class}}<div class ="ac_init_sp_txt" id = "ac_init_sp_txt_ac">ARMOR CLASS </div></div>
+      <div class = "col-4 my-auto color_4">{{form.initiative}}<div class ="ac_init_sp_txt"> <br>INITIATIVE </div></div>
+      <div class = "col-4 my-auto color_4">{{form.speed}}<div class ="ac_init_sp_txt"> <br>SPEED </div></div>
     </div>
     <div class="hitpoint col_right ">
       <div class = "row"><div class ="col">{{form.hp_curr}} </div></div>
@@ -231,27 +231,27 @@
         <div class = "atk_spell_row_col_3 my-auto">DAMAGE/TYPE</div>
       </div>
       <div class = "atk_spell_values">
-      <div class = "row atk_spell_row">
+      <div class = "row atk_spell_row color_3">
        <div class = "atk_spell_row_col_1 my-auto ">{{form.atk_spell_name_1}}</div>
         <div class = "atk_spell_row_col_2 my-auto ">{{form.atk_spell_bonus_1}}</div>
         <div class = "atk_spell_row_col_3 my-auto ">{{form.atk_spell_type_1}}</div>
       </div>
-      <div class = "row atk_spell_row">
+      <div class = "row atk_spell_row color_3">
          <div class = "atk_spell_row_col_1 my-auto ">{{form.atk_spell_name_2}}</div>
         <div class = "atk_spell_row_col_2 my-auto ">{{form.atk_spell_bonus_2}}</div>
         <div class = "atk_spell_row_col_3 my-auto ">{{form.atk_spell_type_2}}</div>
       </div>
-      <div class = "row atk_spell_row">
+      <div class = "row atk_spell_row color_3">
          <div class = "atk_spell_row_col_1 my-auto ">{{form.atk_spell_name_3}}</div>
         <div class = "atk_spell_row_col_2 my-auto ">{{form.atk_spell_bonus_3}}</div>
         <div class = "atk_spell_row_col_3 my-auto ">{{form.atk_spell_type_3}}</div>
       </div>
-      <div class = "row atk_spell_row">
+      <div class = "row atk_spell_row color_3">
          <div class = "atk_spell_row_col_1 my-auto ">{{form.atk_spell_name_4}}</div>
         <div class = "atk_spell_row_col_2 my-auto ">{{form.atk_spell_bonus_4}}</div>
         <div class = "atk_spell_row_col_3 my-auto ">{{form.atk_spell_type_4}}</div>
       </div>
-      <div class = "row atk_spell_row">
+      <div class = "row atk_spell_row color_3">
          <div class = "atk_spell_row_col_1 my-auto ">{{form.atk_spell_name_5}}</div>
         <div class = "atk_spell_row_col_2 my-auto ">{{form.atk_spell_bonus_5}}</div>
         <div class = "atk_spell_row_col_3 my-auto ">{{form.atk_spell_type_5}}</div>
@@ -261,16 +261,10 @@
     ATTACKS & SPELLCASTING
       </div>
     </div>
-
 </div>
 
   </div>
 
-
-
-
-
-    <input type="submit" value="Submit">
 </form>
 
 

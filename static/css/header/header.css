@@ -1,14 +1,23 @@
 
 
+
+
 /*HEADER*/
-container
+
 header {
-height:15vw
+height:15vh;
 }
 
+#navbar_title{
+color:#7e685a;
+}
 #footer {
-background-color:#85144b;
-height:3.7%;
+background-color:#7e685a;
+height:6%;
+}
+
+.footer_row{
+height:100%;
 }
 
 
@@ -16,9 +25,34 @@ height:3.7%;
 SHEET
 */
 
+    /*COLORS*/
+    body{
+    background-color:white;
+    color:black;
+    }
+
+    .color_1 {
+    background-color:white;
+    }
+
+    .color_2 {
+    background-color:#EDEAE5;
+    }
+
+    .color_3 {
+    background-color:#B0C4DE;
+    }
+
+    .color_4 {
+    background-color:#379683;
+    }
+
+    #Sheet_form{
+
+    }
     /* Grid 1 */
     #grid-wrapper-1 {
-    height: 90vh
+    height: 90vh;
     }
 
         /*Column layout */
@@ -26,10 +60,15 @@ SHEET
         width:16vw;
         }
 
+        .grid-container-1 {
+
+        }
         .col_mid {
         width:32.5vw;
         margin-left:2.5vw;
         }
+
+
 
         .col_right {
         width:45vw;
@@ -47,14 +86,13 @@ SHEET
         .charisma { grid-area: charisma; height:12.5vh;}
 
         .insp_prof { grid-area: insp_prof; height:10vh;}
-        .saving { grid-area: saving;  height:16vh;}
-        .skills { grid-area: skills; height:52vh; }
+        .saving { grid-area: saving;  height:8vh;}
+        .skills { grid-area: skills; height:50vh; }
 
         .ac_init_sp { grid-area: ac_init_sp; }
         .hitpoint { grid-area: hitpoint;}
         .dice_death { grid-area: dice_death;}
         .atk_spell { grid-area: atk_spell;}
-
 
         .grid-container-1 {
           display: grid;
@@ -64,23 +102,22 @@ SHEET
             'strength       saving      saving      hitpoint    hitpoint      hitpoint'
             'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
             'constitution   saving      saving      hitpoint    hitpoint    hitpoint'
-            'constitution   skills      skills      dice_death  dice_death  dice_death'
-            'intelligence   skills      skills      dice_death  dice_death  dice_death'
-            'intelligence   skills      skills      atk_spell   atk_spell   atk_spell'
-            'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
-            'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
-            'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
-            'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
-            'charisma       skills      skills      atk_spell   atk_spell   atk_spell';
+            'constitution   skills      dice_death      dice_death  dice_death  dice_death'
+            'intelligence   skills      dice_death      dice_death  dice_death  dice_death'
+            'intelligence   skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'wisdom         skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'wisdom         skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            ;
+            background-color:white;
           grid-gap: 2px;
-          background-color: #2196F3;
           padding: 2px;
-          background-color:white;
         }
 
         /* Grid cells*/
         .grid-container-1 > div {
-          background-color: rgba(255, 255, 255, 0.8);
           text-align: center;
           font-size: 10px;
 
@@ -126,6 +163,7 @@ SHEET
 
     /*Form fields */
 
+
     /*char_name*/
     .vertical_align {
       position: relative;
@@ -134,10 +172,15 @@ SHEET
       transform: translateY(-50%);
     }
 
+    #charactername {
+    font-size:5.5vw;
+    }
+
     /*Attribute*/
     .attribute {
-      border: 2px solid #73AD21;
+      border: 2px solid #c2b9b0;
       border-radius:5px;
+      background-color:#c2b9b0
     }
 
     /*ins_prof*/
@@ -161,8 +204,12 @@ SHEET
 
     /*Saving */
     .saving {
-    height:44vw;
-    padding-top:2vw;
+    height:26vh;
+    width:36vw;
+    padding-top:1vh;
+    padding-bottom:2vh;
+    border: 2px solid #696969;
+    border-radius:5px;
     }
 
     .saving_row {
@@ -176,6 +223,12 @@ SHEET
 
     /*Skills*/
 
+    .skills {
+    margin-left:5vw;
+    margin-top:5vw;
+    width:25.5vw;
+    }
+
     .skill_col {
     font-size: 2vw;
     }
@@ -185,34 +238,55 @@ SHEET
     }
 
     .skill_row {
-    padding-bottom: 2pt;
+    padding-bottom: 2.5pt;
+    }
+
+    .skill_col_1 {
+    width:10%;
+    }
+
+    .skill_col_2 {
+    width:10%;
+    padding-left:1vw
+    }
+
+    .skill_col_3 {
+    width:80%;
+    padding-left:2vw;
+    text-align:left;
+    }
+
+
+    .skill_row_last {
+    padding-bottom: 12.5vw;
     }
 
     /*Armor class, Initiative, Speeds */
     .ac_init_sp {
-    margin-left:3vw;
-    height:15vw;
-    width:90%;
+    margin-left:0vw;
+    height:7vh;
+    width:80%;
     }
 
     .ac_init_sp_txt {
-     font-size: 2vw;
+     font-size: 1.5vw;
+     text-align:center;
      }
 
-     #ac_init_sp_txt_ac{
-     font-size: 1.75vw;
-     }
 
      /*Hitpoints*/
      .hitpoint{
+     padding-top:2vw;
      margin-left:0vw;
      text-align:center;
      }
 
      /*Dice death */
      .dice_death {
-     height:15vw;
-     margin-left:2vw;
+     height:7vh;
+     margin-left:0vw;
+     margin-top:2vw;
+     width:70%;
      }
 
      .dice_death_right {
@@ -230,6 +304,10 @@ SHEET
 
 
     /*atk_spell*/
+
+    .atk_spell {
+    width:80%;
+    }
 
     .atk_spell_values{
     height:80%;
@@ -254,3 +332,6 @@ SHEET
     .atk_spell_row_col_3{
     width:40%;
     }
+
+
+}

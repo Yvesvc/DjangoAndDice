@@ -5,11 +5,11 @@ from .models import Sheet
 
 #style
 sav_value = 'width:5vw; text-align:center'
-skill_value = 'width:5vw; text-align:center'
+skill_value = 'width:4vw; height:2.5vh; text-align:left;'
 attr_std = 'width:50%; text-align:center'
 attr_mod = 'width:25%; text-align:center'
-ac_init_sp = 'width:9vw; height:9vw; text-align:center'
-hitp = 'width:24vw; height:13vw; text-align:center'
+ac_init_sp = 'width:8.3vw; height:4vh; text-align:center'
+hitp = 'width:24vw; height:6vh; text-align:center'
 dice_dth_left = 'width:17vw; height:100%; text-align:center'
 dice_dth_right = 'width:8vw; height:100%; text-align:center'
 atk_spell = 'width:90%;'
@@ -25,7 +25,7 @@ class Sheet_Form(forms.ModelForm):
         fields = '__all__'
         #Add class/id names to Sheet_forn fields
         widgets = {
-            'level': forms.NumberInput(attrs = {'style': 'width:20%; text-align:center'}),
+            'level': forms.NumberInput(attrs = {'style': 'width:30%; text-align:center'}),
 
             #Attributes
             'strength': forms.NumberInput(attrs={'style': attr_std}),
