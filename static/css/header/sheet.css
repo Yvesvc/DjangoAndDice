@@ -1,0 +1,333 @@
+
+
+/*
+SHEET
+*/
+
+    /*COLORS*/
+    body{
+    background-color:white;
+    color:black;
+    }
+
+    .color_1 {
+    background-color:white;
+    }
+
+    .color_2 {
+    background-color:#EDEAE5;
+    }
+
+    .color_3 {
+    background-color:#B0C4DE;
+    }
+
+    .color_4 {
+    background-color:#379683;
+    }
+
+    #Sheet_form{
+
+    }
+    /* Grid 1 */
+    #grid-wrapper-1 {
+    height: 90vh;
+    }
+
+        /*Column layout */
+        .col_left {
+        width:16vw;
+        }
+
+        .grid-container-1 {
+
+        }
+        .col_mid {
+        width:32.5vw;
+        margin-left:2.5vw;
+        }
+
+
+
+        .col_right {
+        width:45vw;
+        }
+
+        /* https://www.w3schools.com/css/css_grid.asp*/
+        /*all blocks must form a rectangle/square */
+        .char_name { grid-area: char_name; height:5vh; }
+
+        .strength { grid-area: strength; height:12.5vh;}
+        .dexterity { grid-area: dexterity; height:12.5vh;}
+        .constitution { grid-area: constitution; height:12.5vh;}
+        .intelligence { grid-area: intelligence; height:12.5vh; }
+        .wisdom { grid-area: wisdom; height:12.5vh;}
+        .charisma { grid-area: charisma; height:12.5vh;}
+
+        .insp_prof { grid-area: insp_prof; height:10vh;}
+        .saving { grid-area: saving;  height:8vh;}
+        .skills { grid-area: skills; height:50vh; }
+
+        .ac_init_sp { grid-area: ac_init_sp; }
+        .hitpoint { grid-area: hitpoint;}
+        .dice_death { grid-area: dice_death;}
+        .atk_spell { grid-area: atk_spell;}
+
+        .grid-container-1 {
+          display: grid;
+          grid-template-areas:
+            'char_name      char_name   char_name   char_name   char_name   char_name'
+            'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
+            'strength       saving      saving      hitpoint    hitpoint      hitpoint'
+            'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
+            'constitution   saving      saving      hitpoint    hitpoint    hitpoint'
+            'constitution   skills      dice_death      dice_death  dice_death  dice_death'
+            'intelligence   skills      dice_death      dice_death  dice_death  dice_death'
+            'intelligence   skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'wisdom         skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'wisdom         skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            'charisma       skills      atk_spell      atk_spell   atk_spell   atk_spell'
+            ;
+            background-color:white;
+          grid-gap: 2px;
+          padding: 2px;
+        }
+
+        /* Grid cells*/
+        .grid-container-1 > div {
+          text-align: center;
+          font-size: 10px;
+
+        }
+
+
+
+    /* Grid 2 */
+
+    .pass_wis { grid-area: pass_wis;width:100%;}
+    .oth_prof_lan { grid-area: oth_prof_lan;width:100%;}
+    .features_traits { grid-area: features_traits;width:100%;}
+
+    .grid-container-2 {
+      display: grid;
+      grid-template-areas:
+        'pass_wis      pass_wis   pass_wis   pass_wis   pass_wis   pass_wis'
+        'oth_prof_lan      oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan'
+        'features_traits      features_traits   features_traits   features_traits   features_traits   features_traits'
+        ;
+      grid-gap: 2px;
+      background-color: #2196F3;
+      padding: 2px;
+      background-color:white;
+    }
+
+    /* Grid cells*/
+    .grid-container-2 > div {
+      background-color: white;
+      text-align: center;
+      font-size: 10px;
+
+    }
+
+    /*Form general CSS */
+
+
+    /*Border*/
+    .border_2px {
+      border: 2px solid #73AD21;
+      border-radius:5px;
+    }
+
+    /*Form fields */
+
+
+    /*char_name*/
+    .vertical_align {
+      position: relative;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    #charactername {
+    font-size:5.5vw;
+    }
+
+    /*Attribute*/
+    .attribute {
+      border: 2px solid #c2b9b0;
+      border-radius:5px;
+      background-color:#c2b9b0
+    }
+
+    /*ins_prof*/
+
+
+    #insp_el11 {
+    padding-left:0;
+    }
+
+    #insp_el12 {
+    font-size:5pt;
+    }
+
+    #insp_el21 {
+    padding-left:0;
+    }
+
+    #insp_el22 {
+    font-size:5pt;
+    }
+
+    /*Saving */
+    .saving {
+    height:26vh;
+    width:36vw;
+    padding-top:1vh;
+    padding-bottom:2vh;
+    border: 2px solid #696969;
+    border-radius:5px;
+    }
+
+    .saving_row {
+    padding-left:4pt;
+    padding-bottom:1pt;
+    }
+
+    .saving_col {
+    font-size: 2vw;
+    }
+
+    /*Skills*/
+
+    .skills {
+    margin-left:5vw;
+    margin-top:5vw;
+    width:25.5vw;
+    }
+
+    .skill_col {
+    font-size: 2vw;
+    }
+
+    .skill_col_ani {
+    font-size: 1.75vw;
+    }
+
+    .skill_row {
+    padding-bottom: 2.5pt;
+    }
+
+    .skill_col_1 {
+    width:10%;
+    }
+
+    .skill_col_2 {
+    width:10%;
+    padding-left:1vw
+    }
+
+    .skill_col_3 {
+    width:80%;
+    padding-left:2vw;
+    text-align:left;
+    }
+
+
+    .skill_row_last {
+    padding-bottom: 55vh;
+    }
+
+    /*Armor class, Initiative, Speeds */
+    .ac_init_sp {
+    margin-left:0vw;
+    height:7vh;
+    width:80%;
+    }
+
+    .ac_init_sp_txt {
+     font-size: 1.5vw;
+     text-align:center;
+     }
+
+
+     /*Hitpoints*/
+     .hitpoint{
+     padding-top:2vw;
+     margin-left:0vw;
+     text-align:center;
+     }
+
+     /*Dice death */
+     .dice_death {
+     height:7vh;
+     margin-left:0vw;
+     margin-top:2vw;
+     width:70%;
+     }
+
+     .dice_death_right {
+     height:50%;
+     }
+
+     .dice_death_right_txt{
+     font-size:1.7vw;
+     }
+
+     .dice_death_txt{
+     text-align:center;
+     font-size:1.75vw;
+     }
+
+
+    /*atk_spell*/
+
+    .atk_spell {
+    width:80%;
+    }
+
+    .atk_spell_values{
+    height:80%;
+    }
+
+    .atk_spell_info{
+    height:5%;
+    font-size:5pt;
+    }
+    .atk_spell_row{
+    height:20%;
+    }
+
+    .atk_spell_row_col_1{
+    width:40%;
+    }
+
+    .atk_spell_row_col_2{
+    width:20%;
+    }
+
+    .atk_spell_row_col_3{
+    width:40%;
+    }
+
+    /*pass_wisdom*/
+
+    .pass_wisdom {
+    margin-top:4.5pt;
+    }
+
+    .pass_wisdom_col_1 {
+    width:20%
+    }
+
+    .pass_wisdom_col_2 {
+    font-size:6pt;
+    text-align:left;
+    width:80%
+    }
+
+
+    /*feat_trait*/
+    /*See sheet.js*/

@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!--BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--load Font Awesome icons -->
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script> <!-- load JQuery -->
     {% load staticfiles %}
-    <!-- Custom stylesheet -->
+    <!-- Custom stylesheets -->
     <link rel="stylesheet" href="{% static 'css/header/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header/sheet.css' %}">
     <title>Django and Dice </title>
 
 </head>
@@ -16,7 +18,7 @@
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <div class="navbar-brand">Django and Dice</div>
+      <div id = "navbar_title" class="navbar-brand">Django and Dice</div>
     </div>
      <!-- Login/Logout -->
     <ul class="nav navbar-nav navbar-right">
@@ -44,11 +46,11 @@
     <footer id = "footer" class="fixed-bottom">
 
 
-        <div class="row">
-          <div class="col text-center"><i class="fa fa-wrench"></i></div>
-          <div class="col text-center"><i class="fa fa-file"></i></div>
-          <div class="col text-center"><i class="fa fa-magic"></i></div>
-          <div class="col text-center"><i class="fa fa-puzzle-piece"></i></div>
+        <div class="row footer_row">
+          <div class="col text-center my-auto"><i class="fa fa-wrench"></i></div>
+          <div class="col text-center my-auto"><i class="fa fa-file"></i></div>
+          <div class="col text-center my-auto"><i class="fa fa-magic"></i></div>
+          <div class="col text-center my-auto"><i class="fa fa-puzzle-piece"></i></div>
         </div>
 
 
@@ -58,5 +60,9 @@
 
     </div>
 </body>
+
+<!-- load custom Javascript / JQuery -->
+<script src="{% static 'javascript/sheet.js' %}"></script>
+
 
 </html>

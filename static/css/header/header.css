@@ -1,112 +1,19 @@
 
 
 /*HEADER*/
-container
+
 header {
-height:15vw
+height:15vh;
 }
 
+#navbar_title{
+color:#7e685a;
+}
 #footer {
-background-color:#85144b;
-height:3.7%;
+background-color:#7e685a;
+height:6%;
 }
 
-
-/*
-SHEET
-*/
-
-/* Grid 1 */
-#grid-wrapper-1 {
-height: 90vh
-}
-
-/* https://www.w3schools.com/css/css_grid.asp*/
-/*all blocks must form a rectangle/square */
-.char_name { grid-area: char_name; height:5vh; }
-
-.strength { grid-area: strength; height:12.5vh; width:16vw;}
-.dexterity { grid-area: dexterity; height:12.5vh; width:16vw;}
-.constitution { grid-area: constitution; height:12.5vh; width:16vw;}
-.intelligence { grid-area: intelligence; height:12.5vh; width:16vw;}
-.wisdom { grid-area: wisdom; height:12.5vh; width:16vw;}
-.charisma { grid-area: charisma; height:12.5vh; width:16vw;}
-
-.insp_prof { grid-area: insp_prof; height:10vh;width:31vw;}
-.saving { grid-area: saving;  height:16vh;width:31vw;}
-.skills { grid-area: skills; height:52vh;width:31vw; }
-
-.ac_init_sp { grid-area: ac_init_sp;width:45vw; }
-.hitpoint { grid-area: hitpoint; width:45vw;}
-.dice_death { grid-area: dice_death;width:45vw;}
-.atk_spell { grid-area: atk_spell;width:45vw; }
-
-
-.grid-container-1 {
-  display: grid;
-  grid-template-areas:
-    'char_name      char_name   char_name   char_name   char_name   char_name'
-    'strength       insp_prof   insp_profn   ac_init_sp  ac_init_sp  ac_init_sp'
-    'strength       saving   saving   ac_init_sp  ac_init_sp  ac_init_sp'
-    'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
-    'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
-    'constitution   skills      skills      hitpoint    hitpoint    hitpoint'
-    'constitution   skills      skills      dice_death  dice_death  dice_death'
-    'intelligence   skills      skills      dice_death  dice_death  dice_death'
-    'intelligence   skills      skills      atk_spell   atk_spell   atk_spell'
-    'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
-    'wisdom         skills      skills      atk_spell   atk_spell   atk_spell'
-    'charisma       skills      skills      atk_spell   atk_spell   atk_spell'
-    'charisma       skills      skills      atk_spell   atk_spell   atk_spell';
-  grid-gap: 2px;
-  background-color: #2196F3;
-  padding: 2px;
-  background-color:red;
-}
-
-/* Grid cells*/
-.grid-container-1 > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  font-size: 10px;
-
-}
-
-.test123 {
-display:inline;
-height:100px;
-}
-
-
-/* Grid 2 */
-
-.pass_wis { grid-area: pass_wis;width:100%;}
-.oth_prof_lan { grid-area: oth_prof_lan;width:100%;}
-.features_traits { grid-area: features_traits;width:100%;}
-
-.grid-container-2 {
-  display: grid;
-  grid-template-areas:
-    'pass_wis      pass_wis   pass_wis   pass_wis   pass_wis   pass_wis'
-    'oth_prof_lan      oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan   oth_prof_lan'
-    'features_traits      features_traits   features_traits   features_traits   features_traits   features_traits'
-    ;
-  grid-gap: 2px;
-  background-color: #2196F3;
-  padding: 2px;
-  background-color:red;
-}
-
-/* Grid cells*/
-.grid-container-2 > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  font-size: 10px;
-
-}
-
-/*Form fields */
-
-.form_item {
-background-color:red;
+.footer_row{
+height:100%;
 }
