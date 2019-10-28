@@ -13,7 +13,8 @@ hitp = 'width:24vw; height:6vh; text-align:center'
 dice_dth_left = 'width:17vw; height:100%; text-align:center'
 dice_dth_right = 'width:8vw; height:100%; text-align:center'
 atk_spell = 'width:90%;'
-
+pass_wis = 'width:5vw; height:100%; text-align:center;'
+feat_trait = 'height:35vh'
 
 
 class Sheet_Form(forms.ModelForm):
@@ -115,5 +116,11 @@ class Sheet_Form(forms.ModelForm):
             'atk_spell_name_5': forms.TextInput(attrs={'style': atk_spell}),
             'atk_spell_bonus_5': forms.NumberInput(attrs={'style': atk_spell}),
             'atk_spell_type_5': forms.TextInput(attrs={'style': atk_spell}),
+
+            #Passive wisdom
+            'pass_wisdom': forms.TextInput(attrs={'style': pass_wis}),
+
+            #feat_trait
+            'feat_trait': forms.Textarea(attrs={'style': feat_trait}),
 
         }
