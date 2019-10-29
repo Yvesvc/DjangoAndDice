@@ -5,6 +5,7 @@ from users.models import User_Extended
 class Sheet(models.Model):
     #link username to username in User_Extended
     username = models.ForeignKey(User_Extended, to_field = "username", default = None,on_delete=models.CASCADE)
+    #(blank = True, null = True) == NULL value allowed
     level = models.PositiveSmallIntegerField(blank = True, null = True)
     strength = models.PositiveSmallIntegerField(blank = True, null = True)
     strength_mod = models.PositiveSmallIntegerField(blank = True, null = True)
