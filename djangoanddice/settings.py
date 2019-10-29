@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'widget_tweaks',
-    'sheet'
+    'sheet',
+    'spells'
 ]
 
 MIDDLEWARE = [
