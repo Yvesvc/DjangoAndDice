@@ -1,0 +1,10 @@
+{% extends 'header/header.html'%}
+{% block content %}
+
+<form id = "Sheet_form" method="post">
+    {% csrf_token %}
+<div>{{Spells5Eform.name}}</div>
+    <input type="submit" value="Add spell">
+</form>
+
+{% endblock content%}
