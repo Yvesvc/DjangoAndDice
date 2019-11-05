@@ -20,4 +20,4 @@ def register(request):
 
 #Login
 def login(request):
-    return render (request, 'users/login.html')
+    return render (request, '')
