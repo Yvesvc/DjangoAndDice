@@ -28,3 +28,28 @@ class My_Spells(models.Model):
     username = models.ForeignKey(User_Extended, to_field="username", default=None, on_delete=models.CASCADE)
     # link name to name in Spells5E
     name = models.ForeignKey(Spells5E, to_field="name", default=None, on_delete=models.CASCADE)
+
+class spells_metadata(models.Model):
+    # link username to username in User_Extended
+    username = models.ForeignKey(User_Extended, to_field="username", default=None, on_delete=models.CASCADE)
+    scability = models.PositiveSmallIntegerField(blank = True, null = True)
+    ssdc = models.PositiveSmallIntegerField(blank = True, null = True)
+    sabonus = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl1_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl1_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl2_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl2_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl3_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl3_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl4_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl4_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl5_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl5_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl6_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl6_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl7_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl7_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl8_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl8_left = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl9_total = models.PositiveSmallIntegerField(blank = True, null = True)
+    lvl9_left = models.PositiveSmallIntegerField(blank = True, null = True)
