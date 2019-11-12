@@ -1,10 +1,38 @@
 {% extends 'header/header.html'%}
 {% block content %}
 
+<form id = "Spells_metadata_form" method="post">
+    {% csrf_token %}
+<div class ="row" id = "metadata">
+    <div class = "col metadata_col my-auto">
+        <div class = "col">{{Metadataform.scability}}</div>
+        <div class = "col metadata_txt">SPELLCASTING ABILITY</div>
+    </div>
+    <div class = "col metadata_col my-auto">
+        <div class = "col">{{Metadataform.ssdc}}</div>
+        <div class = "col metadata_txt">SPELL SAVE DC</div>
+        </div>
+    <div class = "col metadata_col my-auto">
+        <div class = "col">{{Metadataform.sabonus}}</div>
+        <div class = "col metadata_txt">SPELL ATK BONUS</div>
+    </div>
+</div>
+    <input type="submit" name = "btnmetadataform" value="Update" id = "btnmetadataform">
+</form>
+
+
 <form id = "Sheet_form" method="post">
     {% csrf_token %}
 <div>{{Spells5Eform.name}}</div>
-    <input type="submit" value="Add spell">
+    <input type="submit" name = "btnSpells5Eform" value="Add spell">
 </form>
+
+<button data-toggle="collapse" data-target="#demo">Collapsible</button>
+
+<div id="demo" class="collapse show">
+Lorem ipsum dolor text....
+</div>
+
+
 
 {% endblock content%}

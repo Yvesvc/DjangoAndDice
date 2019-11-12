@@ -14,4 +14,3 @@ $('.feat_trait_val').css('position', 'absolute');
 $('.feat_trait_val').css('width', '55vw');
 /*$('.feat_trait_val').css('height', '35vh');*/
 $('.feat_trait_val').css('margin-left', '2vw');
-

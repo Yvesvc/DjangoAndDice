@@ -1,0 +1,36 @@
+
+
+#Spells_metadata_form{
+padding-top: 2vw;
+padding-bottom: 2vw;
+
+border: 2px solid #AAAAAA;
+border-radius:5px;
+
+}
+
+#metadata {
+text-align:center;
+padding-left:10vw;
+padding-right:10vw;
+}
+
+.metadata_txt {
+font-size: 2vw;
+}
+
+.metadata_col{
+width:33%;
+border-radius:5px;
+background-color:#B0C4DE;
+padding-top:1vw;
+padding-bottom:1vw;
+}
+
+#btnmetadataform{
+margin-top:1vw;
+margin-left:1vw;
+height: 5vw;
+width: 10vw;
+font-size:2vw;
+}
