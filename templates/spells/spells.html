@@ -17,7 +17,103 @@
         <div class = "col metadata_txt">SPELL ATK BONUS</div>
     </div>
 </div>
+
+<div id = "spells_slots">
+    <div class = "row">
+        <div class = "col">
+            <div class = "row spells_slots_info">
+                <div class = "spells_slots_info_col">SPELL LVL</div>
+                <div class = "spells_slots_info_col">SLOTS_TOT</div>
+                <div class = "spells_slots_info_col">SLOTS EXP</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row spells_slots_info">
+                <div class = "spells_slots_info_col">SPELL LVL</div>
+                <div class = "spells_slots_info_col">SLOTS_TOT</div>
+                <div class = "spells_slots_info_col">SLOTS EXP</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row spells_slots_info">
+                <div class = "spells_slots_info_col">SPELL LVL</div>
+                <div class = "spells_slots_info_col">SLOTS_TOT</div>
+                <div class = "spells_slots_info_col">SLOTS EXP</div>
+            </div>
+        </div>
+    </div>
+    <div class = "row spell_slots_row_val">
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl"> 1</div>
+                <div class = " spells_slots_tot"> {{Metadataform.lvl1_total}} </div>
+                <div class = " spells_slots_rem"> {{Metadataform.lvl1_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl"> 4</div>
+                <div class = " spells_slots_tot"> {{Metadataform.lvl4_total}}</div>
+                <div class = " spells_slots_rem"> {{Metadataform.lvl4_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 7</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl7_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl7_left}}</div>
+            </div>
+        </div>
+    </div>
+    <div class = "row spell_slots_row_val">
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 2</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl2_total}}</div>
+                <div class = " spells_slots_rem " > {{Metadataform.lvl2_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 5</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl5_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl5_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 8</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl8_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl8_left}}</div>
+            </div>
+        </div>
+    </div>
+    <div class = "row spell_slots_row_val">
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 3</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl3_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl3_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 6</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl6_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl6_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 9</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl9_total}}</div>
+                <div class = " spells_slots_rem"> {{Metadataform.lvl9_left}}</div>
+            </div>
+        </div>
+    </div>
+</div>
     <input type="submit" name = "btnmetadataform" value="Update" id = "btnmetadataform">
+
 </form>
 
 
@@ -26,6 +122,68 @@
 <div>{{Spells5Eform.name}}</div>
     <input type="submit" name = "btnSpells5Eform" value="Add spell">
 </form>
+
+
+<div class = "my_spells">
+    <div class = "row lvl">
+        <div class  = "col lvl_val">0</div>
+        <div class  = "col"></div>
+    </div>
+    <div class = "row lvl_expl">
+        <div class  = "col lvl_val">SPELL LEVEL</div>
+        <div class  = "col total">SLOTS TOTAL</div>
+        <div class  = "col remain">SLOTS EXPENDED</div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">1</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">2</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">3</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">4</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">5</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">6</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">7</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">8</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">9</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+
+</div>
+
+
+
 
 <button data-toggle="collapse" data-target="#demo">Collapsible</button>
 
