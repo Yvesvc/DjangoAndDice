@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('users.urls')),
     path('', include('sheet.urls')),
-    path('spells', include('spells.urls'))
+    path('spells/', include('spells.urls')),
 ]

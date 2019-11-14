@@ -1,7 +1,9 @@
+import json
 from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import Spells5EForm, MetadataForm
-from .models import spells_metadata
+from .models import spells_metadata, My_Spells, Spells5E
+from users.models import User_Extended
 
 
 def index (request):
@@ -21,12 +23,8 @@ def index (request):
     #POST
     if request.method == 'POST':
 
-        #Spells5Eform
-        if 'btnSpells5Eform' in request.POST:
-            return HttpResponse('add spell test')
-
         #metadataform
-        elif 'btnmetadataform' in request.POST:
+        if 'btnmetadataform' in request.POST:
             # .copy() to enable to alter the post data
             Metadataform = MetadataForm(request.POST.copy())
             Metadataform.data['username'] = request.user.username
@@ -38,11 +36,28 @@ def index (request):
                     pass
                 # save new record of user
                 Metadataform.save()
+
+
+        elif 'btnmetadataform' not in request.POST:
+            Metadataform = MetadataForm(request.POST.copy())
+
         Spells5Eform = Spells5EForm()
 
     return render (request, 'spells/spells.html', {'Spells5Eform':Spells5Eform, 'Metadataform':Metadataform })
 
 
 
-
-
+def addlevel (request):
+    if request.is_ajax() and request.method == 'POST':
+        name_spell_form = request.POST['name']
+        user_name = User_Extended.objects.get(username=request.user.username)
+        name_Spells5E = Spells5E.objects.get(name=name_spell_form)
+        My_Spells.objects.create(
+            username = user_name,
+            name = name_Spells5E
+        )
+        #retrieve values as list
+        test = Spells5E.objects.values_list(['level','components'], flat=True).get(name=name_spell_form)
+        print(type(test))
+        data = {'message': test}
+        return HttpResponse(json.dumps(data), content_type = 'application/json')

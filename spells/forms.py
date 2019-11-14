@@ -6,7 +6,7 @@ meta_style = 'width:10vw; text-align:center'
 lvl_style = 'width:80%; height:100%;'
 
 class Spells5EForm (forms.ModelForm):
-    name = forms.ModelChoiceField(queryset=Spells5E.objects.values_list('name', flat=True), widget=forms.Select(attrs={'style':'font-size:3vw'}))
+    name = forms.ModelChoiceField(queryset=Spells5E.objects.values_list('name', flat=True), widget=forms.Select(attrs={'style':'font-size:3vw'})) #django automatically assigns id = "id_name"
 
     class Meta:
         model = Spells5E
