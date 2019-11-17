@@ -128,7 +128,12 @@
     <div class = "row lvl">
         <div class  = "col lvl_val">0</div>
         <div class  = "col"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if 'Cantrip' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl_expl">
         <div class  = "col lvl_val">SPELL LEVEL</div>
         <div class  = "col total">SLOTS TOTAL</div>
@@ -138,47 +143,92 @@
         <div class  = "col lvl_val">1</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '1' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">2</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '2' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">3</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '3' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">4</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '4' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">5</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '5' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">6</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '6' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">7</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '7' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">8</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
     </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '8' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
     <div class = "row lvl">
         <div class  = "col lvl_val">9</div>
         <div class  = "col total"></div>
         <div class  = "col remain"></div>
-    </div>
+        </div>
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '9' in my_spell.level %}
+                <div class = "my_spells_spell">{{my_spell.name}} </div>
+            {% endif %}
+        {% endfor %}
 
 </div>
 
