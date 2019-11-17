@@ -1,4 +1,5 @@
 
+/*Add spell AJAX*/
 $(document).on('submit', '#Sheet_form', function(e){
     //Prevent form form being posted
     e.preventDefault();
@@ -19,3 +20,33 @@ $(document).on('submit', '#Sheet_form', function(e){
         }
     });
 });
+
+/* Show/hide my_spells info*/
+$(document).ready(function(){
+
+  $(".my_spells_spell").click(function(){
+    if ( $(this).children(".my_spells_spell_info").css("display") == "none") {
+        $(this).children(".my_spells_spell_info").show();
+    }
+    else {
+        $(this).children(".my_spells_spell_info").hide();
+    }
+
+  });
+});
+
+
+/*
+function clickBarMobile() {
+   var navBarElementsMobile = document.getElementById("nav_bar_elements_mobile");
+   if (navBarElementsMobile.style.display === "none") {
+   navBarElementsMobile.style.display = "block";
+   }
+   else {
+   navBarElementsMobile.style.display = "none";
+   }
+}
+
+var barInNavBar = document.getElementById("nav_bar_right_mobile");
+barInNavBar.addEventListener("click", clickBarMobile);
+*/

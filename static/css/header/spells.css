@@ -94,3 +94,11 @@ border: 2px solid #73AD21;
 }
 
 
+.my_spells_spell_info {
+display:none;
+font-size: 3vw;
+}
+
+.my_spells_spell_info_el{
+margin-bottom:0.5vh;
+}
