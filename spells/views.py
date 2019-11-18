@@ -73,7 +73,29 @@ def addlevel (request):
             name = name_spell_form
         )
         #retrieve values as list
-        test = Spells5E.objects.values_list(['level','components'], flat=True).get(name=name_spell_form)
-        print(type(test))
-        data = {'message': test}
+        spell_added = Spells5E.objects.values_list('name', 'level', 'desc','higher_level', 'range', 'components','material', 'ritual', 'duration', 'concentration', 'casting_time', 'school', 'char_class', 'archetype','domains','patrons','oaths','circles').get(name=name_spell_form)
+
+        #store in dictionary
+        spell_added_dict = {}
+        spell_added_dict['name'] = spell_added[0]
+        spell_added_dict['level'] = spell_added[1]
+        spell_added_dict['desc'] = spell_added[2]
+        spell_added_dict['higher_level'] = spell_added[3]
+        spell_added_dict['range'] = spell_added[4]
+        spell_added_dict['components'] = spell_added[5]
+        spell_added_dict['material'] = spell_added[6]
+        spell_added_dict['ritual'] = spell_added[7]
+        spell_added_dict['duration'] = spell_added[8]
+        spell_added_dict['concentration'] = spell_added[9]
+        spell_added_dict['casting_time'] = spell_added[10]
+        spell_added_dict['school'] = spell_added[1]
+        spell_added_dict['char_class'] = spell_added[12]
+        spell_added_dict['archetype'] = spell_added[13]
+        spell_added_dict['domains'] = spell_added[14]
+        spell_added_dict['patrons'] = spell_added[15]
+        spell_added_dict['oaths'] = spell_added[16]
+        spell_added_dict['circles'] = spell_added[17]
+        data = spell_added_dict
+
+        #return as json
         return HttpResponse(json.dumps(data), content_type = 'application/json')
