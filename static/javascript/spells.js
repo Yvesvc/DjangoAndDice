@@ -18,41 +18,57 @@ $(document).on('submit', '#Sheet_form', function(e){
             alert('success');
             var spell_level;
             spell_level = data.level
+            var part1 = '<div class = "my_spells_spell">';
+            var part2 = '<div class = "my_spells_spell_info"> </div> </div>';
             if (spell_level.indexOf("Cantrip") >= 0) {
-                alert('cantrip');
+                $("#my_spells_lvl0").append(
+                part1 + data.name + part2
+                );
             }
             else if (spell_level.indexOf("1") >= 0){
-                alert('1');
+                $("#my_spells_lvl1").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("2") >= 0){
-                alert('2');
+                $("#my_spells_lvl2").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("3") >= 0){
-                alert('3');
+                $("#my_spells_lvl3").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("4") >= 0){
-                alert('4');
+                $("#my_spells_lvl4").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("5") >= 0){
-                alert('5');
                 $("#my_spells_lvl5").append(
-                "<p>" +
-                data.level +
-                "</p>"
+                part1 + data.name + part2
                 );
-
                }
             else if (spell_level.indexOf("6") >= 0){
-                alert('6');
+                $("#my_spells_lvl6").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("7") >= 0){
-                alert('7');
+                $("#my_spells_lvl7").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("8") >= 0){
-                alert('8');
+                $("#my_spells_lvl8").append(
+                part1 + data.name + part2
+                );
                }
             else if (spell_level.indexOf("9") >= 0){
-                alert('9');
+                $("#my_spells_lvl9").append(
+                part1 + data.name + part2
+                );
                }
         }
     });
