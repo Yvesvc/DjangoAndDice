@@ -26,8 +26,8 @@ class Spells5E(models.Model):
 class My_Spells(models.Model):
     # link username to username in User_Extended
     username = models.ForeignKey(User_Extended, to_field="username", default=None, on_delete=models.CASCADE)
-    # link name to name in Spells5E
-    name = models.ForeignKey(Spells5E, to_field="name", default=None, on_delete=models.CASCADE)
+    # Foreign key to Spells5E name not used as Django expects reference to object, not value https://stackoverflow.com/questions/30017334/django-foreign-key-must-be-an-instance
+    name = models.CharField(max_length=50, blank=True, null=True)
 
 class spells_metadata(models.Model):
     # link username to username in User_Extended

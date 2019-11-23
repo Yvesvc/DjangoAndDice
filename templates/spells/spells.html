@@ -17,7 +17,103 @@
         <div class = "col metadata_txt">SPELL ATK BONUS</div>
     </div>
 </div>
+
+<div id = "spells_slots">
+    <div class = "row">
+        <div class = "col">
+            <div class = "row spells_slots_info">
+                <div class = "spells_slots_info_col">SPELL LVL</div>
+                <div class = "spells_slots_info_col">SLOTS_TOT</div>
+                <div class = "spells_slots_info_col">SLOTS EXP</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row spells_slots_info">
+                <div class = "spells_slots_info_col">SPELL LVL</div>
+                <div class = "spells_slots_info_col">SLOTS_TOT</div>
+                <div class = "spells_slots_info_col">SLOTS EXP</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row spells_slots_info">
+                <div class = "spells_slots_info_col">SPELL LVL</div>
+                <div class = "spells_slots_info_col">SLOTS_TOT</div>
+                <div class = "spells_slots_info_col">SLOTS EXP</div>
+            </div>
+        </div>
+    </div>
+    <div class = "row spell_slots_row_val">
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl"> 1</div>
+                <div class = " spells_slots_tot"> {{Metadataform.lvl1_total}} </div>
+                <div class = " spells_slots_rem"> {{Metadataform.lvl1_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl"> 4</div>
+                <div class = " spells_slots_tot"> {{Metadataform.lvl4_total}}</div>
+                <div class = " spells_slots_rem"> {{Metadataform.lvl4_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 7</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl7_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl7_left}}</div>
+            </div>
+        </div>
+    </div>
+    <div class = "row spell_slots_row_val">
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 2</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl2_total}}</div>
+                <div class = " spells_slots_rem " > {{Metadataform.lvl2_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 5</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl5_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl5_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 8</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl8_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl8_left}}</div>
+            </div>
+        </div>
+    </div>
+    <div class = "row spell_slots_row_val">
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 3</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl3_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl3_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 6</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl6_total}}</div>
+                <div class = " spells_slots_rem "> {{Metadataform.lvl6_left}}</div>
+            </div>
+        </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = " spells_slots_lvl "> 9</div>
+                <div class = " spells_slots_tot "> {{Metadataform.lvl9_total}}</div>
+                <div class = " spells_slots_rem"> {{Metadataform.lvl9_left}}</div>
+            </div>
+        </div>
+    </div>
+</div>
     <input type="submit" name = "btnmetadataform" value="Update" id = "btnmetadataform">
+
 </form>
 
 
@@ -26,6 +122,347 @@
 <div>{{Spells5Eform.name}}</div>
     <input type="submit" name = "btnSpells5Eform" value="Add spell">
 </form>
+
+
+<div class = "my_spells">
+    <div class = "row lvl">
+        <div class  = "col lvl_val">0</div>
+        <div class  = "col"></div>
+    </div>
+    <div id = "my_spells_lvl0">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if 'Cantrip' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl_expl">
+        <div class  = "col lvl_val">SPELL LEVEL</div>
+        <div class  = "col total">SLOTS TOTAL</div>
+        <div class  = "col remain">SLOTS EXPENDED</div>
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">1</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl1">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '1' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">2</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl2">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '2' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">3</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl3">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '3' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">4</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl4">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '4' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">5</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl5">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '5' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">6</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl6">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '6' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">7</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl7">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '7' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">8</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl8">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '8' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class = "row lvl">
+        <div class  = "col lvl_val">9</div>
+        <div class  = "col total"></div>
+        <div class  = "col remain"></div>
+    </div>
+    <div id = "my_spells_lvl9">
+        {% for my_spell in my_spells_in_Spells5E %}
+            {% if '9' in my_spell.level %}
+                <div class = "my_spells_spell">
+                    <div class = "my_spells_spell_del my_spells_spell_row"> <i class="fa fa-minus-circle"></i></div>
+                    <div class = "my_spells_spell_name my_spells_spell_row">{{my_spell.name}}</div>
+                    <div class = "my_spells_spell_info">
+                        <div class = "my_spells_spell_info_el"> Desc: {{my_spell.desc}}</div>
+                        <div class = "my_spells_spell_info_el"> Higher level: {{my_spell.higher_level}}</div>
+                        <div class = "my_spells_spell_info_el"> Range: {{my_spell.range}}</div>
+                        <div class = "my_spells_spell_info_el"> Components: {{my_spell.components}}</div>
+                        <div class = "my_spells_spell_info_el"> Material: {{my_spell.material}}</div>
+                        <div class = "my_spells_spell_info_el"> Ritual: {{my_spell.ritual}}</div>
+                        <div class = "my_spells_spell_info_el"> Duration: {{my_spell.duration}}</div>
+                        <div class = "my_spells_spell_info_el"> Concentration: {{my_spell.concentration}}</div>
+                        <div class = "my_spells_spell_info_el"> Casting time: {{my_spell.casting_time}}</div>
+                        <div class = "my_spells_spell_info_el"> School: {{my_spell.school}}</div>
+                        <div class = "my_spells_spell_info_el"> Char class: {{my_spell.char_class}}</div>
+                        <div class = "my_spells_spell_info_el"> Archetype: {{my_spell.archetype}}</div>
+                        <div class = "my_spells_spell_info_el"> Domains: {{my_spell.domains}}</div>
+                        <div class = "my_spells_spell_info_el"> Patrons: {{my_spell.patrons}}</div>
+                        <div class = "my_spells_spell_info_el"> Oaths: {{my_spell.oaths}}</div>
+                        <div class = "my_spells_spell_info_el"> Circles: {{my_spell.circles}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+
 
 <button data-toggle="collapse" data-target="#demo">Collapsible</button>
 
