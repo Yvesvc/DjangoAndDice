@@ -1,6 +1,9 @@
 {% extends 'header/header.html'%}
 {% block content %}
 
+{% load staticfiles %}
+<script src="{% static 'javascript/spells.js' %}"></script>
+
 <form id = "Spells_metadata_form" method="post">
     {% csrf_token %}
 <div class ="row" id = "metadata">
@@ -117,7 +120,7 @@
 </form>
 
 
-<form id = "Sheet_form" method="post">
+<form id = "add_spell_button" method="post">
     {% csrf_token %}
 <div>{{Spells5Eform.name}}</div>
     <input type="submit" name = "btnSpells5Eform" value="Add spell">

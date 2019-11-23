@@ -1,6 +1,6 @@
 
 /*Add spell AJAX*/
-$(document).on('submit', '#Sheet_form', function(e){
+$(document).on('submit', '#add_spell_button', function(e){
     //Prevent form form being posted
     e.preventDefault();
     $.ajax({
