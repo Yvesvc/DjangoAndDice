@@ -67,35 +67,58 @@ def addlevel (request):
     if request.is_ajax() and request.method == 'POST':
         name_spell_form = request.POST['name']
         user_name = User_Extended.objects.get(username=request.user.username)
-        #name_Spells5E = Spells5E.objects.get(name=name_spell_form)
-        My_Spells.objects.create(
-            username = user_name,
-            name = name_spell_form
-        )
-        #retrieve values as list
-        spell_added = Spells5E.objects.values_list('name', 'level', 'desc','higher_level', 'range', 'components','material', 'ritual', 'duration', 'concentration', 'casting_time', 'school', 'char_class', 'archetype','domains','patrons','oaths','circles').get(name=name_spell_form)
+        #if spell already exists, dont re-add it
+        try:
+            My_Spells.objects.get(username=user_name, name=name_spell_form)
+            # return as json
+            data = {}
+            return HttpResponse(json.dumps(data), content_type='application/json')
 
-        #store in dictionary
-        spell_added_dict = {}
-        spell_added_dict['name'] = spell_added[0]
-        spell_added_dict['level'] = spell_added[1]
-        spell_added_dict['desc'] = spell_added[2]
-        spell_added_dict['higher_level'] = spell_added[3]
-        spell_added_dict['range'] = spell_added[4]
-        spell_added_dict['components'] = spell_added[5]
-        spell_added_dict['material'] = spell_added[6]
-        spell_added_dict['ritual'] = spell_added[7]
-        spell_added_dict['duration'] = spell_added[8]
-        spell_added_dict['concentration'] = spell_added[9]
-        spell_added_dict['casting_time'] = spell_added[10]
-        spell_added_dict['school'] = spell_added[1]
-        spell_added_dict['char_class'] = spell_added[12]
-        spell_added_dict['archetype'] = spell_added[13]
-        spell_added_dict['domains'] = spell_added[14]
-        spell_added_dict['patrons'] = spell_added[15]
-        spell_added_dict['oaths'] = spell_added[16]
-        spell_added_dict['circles'] = spell_added[17]
-        data = spell_added_dict
+        #if spells doesn't exist yet, add
+        except My_Spells.DoesNotExist:
+            My_Spells.objects.create(
+                username = user_name,
+                name = name_spell_form
+            )
+            #retrieve values as list
+            spell_added = Spells5E.objects.values_list('name', 'level', 'desc','higher_level', 'range', 'components','material', 'ritual', 'duration', 'concentration', 'casting_time', 'school', 'char_class', 'archetype','domains','patrons','oaths','circles').get(name=name_spell_form)
 
+            #store in dictionary
+            spell_added_dict = {}
+            spell_added_dict['name'] = spell_added[0]
+            spell_added_dict['level'] = spell_added[1]
+            spell_added_dict['desc'] = spell_added[2]
+            spell_added_dict['higher_level'] = spell_added[3]
+            spell_added_dict['range'] = spell_added[4]
+            spell_added_dict['components'] = spell_added[5]
+            spell_added_dict['material'] = spell_added[6]
+            spell_added_dict['ritual'] = spell_added[7]
+            spell_added_dict['duration'] = spell_added[8]
+            spell_added_dict['concentration'] = spell_added[9]
+            spell_added_dict['casting_time'] = spell_added[10]
+            spell_added_dict['school'] = spell_added[1]
+            spell_added_dict['char_class'] = spell_added[12]
+            spell_added_dict['archetype'] = spell_added[13]
+            spell_added_dict['domains'] = spell_added[14]
+            spell_added_dict['patrons'] = spell_added[15]
+            spell_added_dict['oaths'] = spell_added[16]
+            spell_added_dict['circles'] = spell_added[17]
+            data = spell_added_dict
+
+            #return as json
+            return HttpResponse(json.dumps(data), content_type = 'application/json')
+
+def deletelevel (request):
+    if request.is_ajax() and request.method == 'POST':
+        #Find corresponding record in db and delete
+        name_spell= request.POST['spell_name_key']
+        user_name = User_Extended.objects.get(username=request.user.username)
+        record_to_delete = My_Spells.objects.get(username = user_name, name = name_spell)
+        record_to_delete.delete()
+
+        # store name deteled spell in dictionary
+        deleted_spell = {}
+        deleted_spell['name'] = name_spell
+        data = deleted_spell
         #return as json
         return HttpResponse(json.dumps(data), content_type = 'application/json')
