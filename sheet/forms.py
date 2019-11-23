@@ -14,7 +14,7 @@ dice_dth_left = 'width:17vw; height:100%; text-align:center'
 dice_dth_right = 'width:8vw; height:100%; text-align:center'
 atk_spell = 'width:90%;'
 pass_wis = 'width:5vw; height:100%; text-align:center;'
-feat_trait = 'height:35vh'
+feat_trait = 'height:35vh; font-size:6pt;width:60vw;'
 
 
 class Sheet_Form(forms.ModelForm):
