@@ -1,6 +1,9 @@
 {% extends 'header/header.html'%}
 {% block content %}
 
+{% load staticfiles %}
+<script src="{% static 'javascript/spells.js' %}"></script>
+
 <form id = "Spells_metadata_form" method="post">
     {% csrf_token %}
 <div class ="row" id = "metadata">
