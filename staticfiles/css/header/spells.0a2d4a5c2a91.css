@@ -1,0 +1,108 @@
+
+/*SPELLS METADATA*/
+
+#Spells_metadata_form{
+padding-top: 2vw;
+padding-bottom: 2vw;
+
+border: 2px solid #AAAAAA;
+border-radius:5px;
+
+}
+
+#metadata {
+text-align:center;
+padding-left:10vw;
+padding-right:10vw;
+}
+
+.metadata_txt {
+font-size: 2vw;
+}
+
+.metadata_col{
+width:33%;
+border-radius:5px;
+background-color:#B0C4DE;
+padding-top:1vw;
+padding-bottom:1vw;
+}
+
+#btnmetadataform{
+margin-top:1vw;
+margin-left:1vw;
+height: 5vw;
+width: 10vw;
+font-size:2vw;
+}
+
+/*SPELLS SLOTS */
+
+#spells_slots {
+margin-top:1vh;
+margin-left:3vw;
+margin-right:1vw;
+text-align:center;
+}
+
+.spell_slots_row_val{
+margin-bottom:0.5vh;
+}
+
+.spells_slots_lvl{
+font-size:1.5vw;
+border: 2px solid #73AD21;
+background-color:#B0C4DE;
+margin-right:0.25vw;
+width:18%;
+
+}
+
+.spells_slots_tot{
+font-size:1.5vw;
+border-radius:5px;
+background-color:#A0C4DE;
+margin-right:0.25vw;
+width:35%;
+}
+
+
+.spells_slots_rem{
+font-size:1.5vw;
+border-radius:5px;
+background-color:#B0C4DE;
+margin-right:0.25vw;
+width:35%;
+}
+
+.spells_slots_info{
+margin-right:0vw;
+font-size:1.5vw;
+}
+
+.spells_slots_info_col{
+width: 33%;
+text-align:center;
+}
+
+
+/*MY SPELLS */
+
+.lvl{
+border: 2px solid #73AD21;
+      border-radius:5px;
+}
+
+.my_spells_spell_row{
+display:inline-block;
+}
+
+
+.my_spells_spell_info {
+display:none;
+font-size: 3vw;
+}
+
+.my_spells_spell_info_el{
+margin-bottom:0.5vh;
+}
