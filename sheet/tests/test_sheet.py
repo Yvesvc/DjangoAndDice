@@ -6,6 +6,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from sheet.models import Sheet
+from spells.tests.test_spells import login_registration
 
 
 """
@@ -55,16 +56,9 @@ class SheetShowRecord(LiveServerTestCase):
 
     def test_show_user_record(self):
         selenium = self.selenium
-        #Opening the link we want to test
-        selenium.get('http://127.0.0.1:8000/user/login')
 
-        username = selenium.find_element_by_name('username')
-        password = selenium.find_element_by_name('password')
-        submit = selenium.find_element_by_id('login_button')
-
-        username.send_keys('testuser1')
-        password.send_keys('Kingsubject1')
-        submit.send_keys(Keys.RETURN)
+        # register and login
+        selenium = login_registration(selenium, self.live_server_url)
 
         #check the returned result
         assert 'Imperator__REX' in selenium.page_source

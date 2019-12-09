@@ -9,7 +9,36 @@ from selenium.webdriver.support.ui import Select
 from spells.models import Spells5E
 from selenium.common.exceptions import NoSuchElementException
 
+#login and registration
+def login_registration(selenium, server_url):
 
+    # register
+    selenium.get(server_url + '/user/registration')
+
+    username = selenium.find_element_by_name('username')
+    charactername = selenium.find_element_by_name('charactername')
+    password1 = selenium.find_element_by_name('password1')
+    password2 = selenium.find_element_by_name('password2')
+    sign_up = selenium.find_element_by_id('register_button')
+
+    username.send_keys('testuser1')
+    charactername.send_keys('Imperator__REX')
+    password1.send_keys('Kingsubject1')
+    password2.send_keys('Kingsubject1')
+
+    sign_up.send_keys(Keys.RETURN)
+
+    # login
+    username = selenium.find_element_by_name('username')
+    password = selenium.find_element_by_name('password')
+    submit = selenium.find_element_by_id('login_button')
+
+    username.send_keys('testuser1')
+    password.send_keys('Kingsubject1')
+
+    submit.send_keys(Keys.RETURN)
+
+    return selenium
 
 
 """
@@ -53,31 +82,8 @@ class SpellShowRecord(LiveServerTestCase):
     def test_show_user_record(self):
         selenium = self.selenium
 
-        # register
-        selenium.get(self.live_server_url + '/user/registration')
-
-        username = selenium.find_element_by_name('username')
-        charactername = selenium.find_element_by_name('charactername')
-        password1 = selenium.find_element_by_name('password1')
-        password2 = selenium.find_element_by_name('password2')
-        sign_up = selenium.find_element_by_id('register_button')
-
-        username.send_keys('testuser1')
-        charactername.send_keys('Imperator__REX')
-        password1.send_keys('Kingsubject1')
-        password2.send_keys('Kingsubject1')
-
-        sign_up.send_keys(Keys.RETURN)
-
-        # login
-        username = selenium.find_element_by_name('username')
-        password = selenium.find_element_by_name('password')
-        submit = selenium.find_element_by_id('login_button')
-
-        username.send_keys('testuser1')
-        password.send_keys('Kingsubject1')
-
-        submit.send_keys(Keys.RETURN)
+        # register and login
+        selenium = login_registration(selenium, self.live_server_url)
 
         #Opening the link we want to test, if no error: given empty form
         selenium.get(self.live_server_url + '/spells')
@@ -118,31 +124,8 @@ class add_spell_ajax(LiveServerTestCase):
     def test_add_spell_ajax(self):
         selenium = self.selenium
 
-        # register
-        selenium.get(self.live_server_url + '/user/registration')
-
-        username = selenium.find_element_by_name('username')
-        charactername = selenium.find_element_by_name('charactername')
-        password1 = selenium.find_element_by_name('password1')
-        password2 = selenium.find_element_by_name('password2')
-        sign_up = selenium.find_element_by_id('register_button')
-
-        username.send_keys('testuser1')
-        charactername.send_keys('Imperator__REX')
-        password1.send_keys('Kingsubject1')
-        password2.send_keys('Kingsubject1')
-
-        sign_up.send_keys(Keys.RETURN)
-
-        # login
-        username = selenium.find_element_by_name('username')
-        password = selenium.find_element_by_name('password')
-        submit = selenium.find_element_by_id('login_button')
-
-        username.send_keys('testuser1')
-        password.send_keys('Kingsubject1')
-
-        submit.send_keys(Keys.RETURN)
+        #register and login
+        selenium = login_registration(selenium, self.live_server_url)
 
         selenium.get(self.live_server_url + '/spells')
 
@@ -181,31 +164,8 @@ class delete_spell_ajax(LiveServerTestCase):
     def test_delete_spell_ajax(self):
         selenium = self.selenium
 
-        # register
-        selenium.get(self.live_server_url + '/user/registration')
-
-        username = selenium.find_element_by_name('username')
-        charactername = selenium.find_element_by_name('charactername')
-        password1 = selenium.find_element_by_name('password1')
-        password2 = selenium.find_element_by_name('password2')
-        sign_up = selenium.find_element_by_id('register_button')
-
-        username.send_keys('testuser1')
-        charactername.send_keys('Imperator__REX')
-        password1.send_keys('Kingsubject1')
-        password2.send_keys('Kingsubject1')
-
-        sign_up.send_keys(Keys.RETURN)
-
-        # login
-        username = selenium.find_element_by_name('username')
-        password = selenium.find_element_by_name('password')
-        submit = selenium.find_element_by_id('login_button')
-
-        username.send_keys('testuser1')
-        password.send_keys('Kingsubject1')
-
-        submit.send_keys(Keys.RETURN)
+        # register and login
+        selenium = login_registration(selenium, self.live_server_url)
 
         selenium.get(self.live_server_url + '/spells')
 
