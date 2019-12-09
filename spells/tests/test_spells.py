@@ -7,6 +7,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from spells.models import Spells5E
+from selenium.common.exceptions import NoSuchElementException
+
+
+
 
 """
 Verify that the main spell view is not publicly accessible, but redirects
@@ -166,6 +170,8 @@ class delete_spell_ajax(LiveServerTestCase):
         self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
         super(delete_spell_ajax, self).setUp()
         Spells5E.objects.create(name='Aid', level = '2')
+        Spells5E.objects.create(name='Absorb Elements', level='1')
+        Spells5E.objects.create(name='Animal Friendship', level='1')
 
     def tearDown(self):
         self.selenium.quit()
@@ -207,24 +213,35 @@ class delete_spell_ajax(LiveServerTestCase):
         add_spell_button = selenium.find_element_by_name('btnSpells5Eform')
 
 
-        #Add Spell 'Aid'
+        #Add Spells 'Aid', 'Absorb Elements' and 'Animal Friendship'
         for option in selected_spell.find_elements_by_tag_name("option"):
-            if option.text == 'Aid':
+            if option.text == 'Aid' or option.text == 'Absorb Elements' or option.text == 'Animal Friendship':
                 option.click()
                 add_spell_button.click()
-                break
+
 
         selenium.refresh()
-        time.sleep(6)
 
-        #add another spell in model and also ajax add it
+        #Delete spell Animal Friendship
+        delete_animal_friendship = selenium.find_element_by_xpath("/html/body/div[@class='container']/div[@class='my_spells']/div[@id='my_spells_lvl1']/div[@class='my_spells_spell'][2]/div[@class='my_spells_spell_del my_spells_spell_row']/i[@class='fa fa-minus-circle']")
+        delete_animal_friendship.click()
+        alert_window = selenium.switch_to_alert()
+        alert_window.accept()
 
-        #refresh url
+        selenium.refresh()
 
-        #delete spell
+        #If other spells deleted, selenium will throw error and test fails
+        absorb_elements = selenium.find_element_by_xpath("/html/body/div[@class='container']/div[@class='my_spells']/div[@id='my_spells_lvl1']/div[@class='my_spells_spell'][1]/div[@class='my_spells_spell_name my_spells_spell_row']")
+        aid = selenium.find_element_by_xpath("/html/body/div[@class='container']/div[@class='my_spells']/div[@id='my_spells_lvl2']/div[@class='my_spells_spell']")
 
-        #check that only the chosen spell is deleted
+        #if spell Animal Friendsip found, assert error
+        try:
+            animal_friendship = selenium.find_element_by_xpath("/html/body/div[@class='container']/div[@class='my_spells']/div[@id='my_spells_lvl1']/div[@class='my_spells_spell'][2]/div[@class='my_spells_spell_name my_spells_spell_row']")
+            assert 2 == 1
+
+        # if spell Animal Friendsip not found, assert correct
+        except NoSuchElementException:
+            assert 1 == 1
 
 
 
-        assert 1 == 2
