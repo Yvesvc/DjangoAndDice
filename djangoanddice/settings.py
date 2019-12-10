@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'sheet',
-    'spells'
+    'spells',
+    'equipment'
 ]
 
 MIDDLEWARE = [

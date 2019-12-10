@@ -44,18 +44,17 @@ def login_registration(selenium, server_url):
 """
 Verify that the main spell view is not publicly accessible, but redirects
 """
-@pytest.mark.parametrize('view_name', ['index'])
-def test_public_views(view_name, client):
-    url = urls.reverse(view_name)
+
+def test_private_view_spells_not_logged_in(client):
+    url = urls.reverse("spells_index")
     resp = client.get(url)
     assert resp.status_code == 302
 
 """
-Verify that the main spell view is accessible, if logged in
+Verify that the main spells view is accessible, if logged in
 """
-@pytest.mark.parametrize('view_name', ['index'])
-def test_private_views_logged_in(view_name, admin_client):
-    url = urls.reverse(view_name)
+def test_private_view_equipment_logged_in(admin_client):
+    url = urls.reverse("spells_index")
     resp = admin_client.get(url)
     assert resp.status_code == 200
 

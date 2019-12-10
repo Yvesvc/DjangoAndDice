@@ -4,8 +4,9 @@ from django.shortcuts import render
 from .forms import Spells5EForm, MetadataForm
 from .models import spells_metadata, My_Spells, Spells5E
 from users.models import User_Extended
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def index (request):
     #GET
     if request.method == 'GET':

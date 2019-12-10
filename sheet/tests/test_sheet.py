@@ -13,7 +13,7 @@ from spells.tests.test_spells import login_registration
 Verify that the main sheet view is not publicly accessible, but redirects
 """
 @pytest.mark.parametrize('view_name', ['index'])
-def test_public_views(view_name, client):
+def test_private_view_spells_not_logged_in(view_name, client):
     url = urls.reverse(view_name)
     resp = client.get(url)
     assert resp.status_code == 302
@@ -22,7 +22,7 @@ def test_public_views(view_name, client):
 Verify that the main sheet view is accessible, if logged in
 """
 @pytest.mark.parametrize('view_name', ['index'])
-def test_private_views_logged_in(view_name, admin_client):
+def test_private_view_spells_logged_in(view_name, admin_client):
     url = urls.reverse(view_name)
     resp = admin_client.get(url)
     assert resp.status_code == 200

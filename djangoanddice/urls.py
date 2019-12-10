@@ -7,4 +7,5 @@ urlpatterns = [
     path('user/', include('users.urls')),
     path('', include('sheet.urls')),
     path('spells/', include('spells.urls')),
+    path('equipment/', include('equipment.urls'))
 ]
