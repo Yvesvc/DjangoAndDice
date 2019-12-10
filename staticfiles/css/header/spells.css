@@ -4,10 +4,6 @@
 #Spells_metadata_form{
 padding-top: 2vw;
 padding-bottom: 2vw;
-
-border: 2px solid #AAAAAA;
-border-radius:5px;
-
 }
 
 #metadata {
@@ -17,7 +13,7 @@ padding-right:10vw;
 }
 
 .metadata_txt {
-font-size: 2vw;
+font-size: 1.5vw;
 }
 
 .metadata_col{
@@ -51,7 +47,6 @@ margin-bottom:0.5vh;
 
 .spells_slots_lvl{
 font-size:1.5vw;
-border: 2px solid #73AD21;
 background-color:#B0C4DE;
 margin-right:0.25vw;
 width:18%;
