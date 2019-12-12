@@ -1,0 +1,19 @@
+{% extends 'header/header.html'%}
+{% block content %}
+
+{% load staticfiles %}
+
+<form id = "Equipment_form" method="post">
+    {% csrf_token %}
+
+  <div class = "row">
+      <div class = "col"><input id = 'update_button_equipment' type="submit" value="Update"></div>
+      <div id = "title_equipment" class = "col">Equipment</div>
+  </div>
+  <div> {{form.equipment_text}}</div>
+
+</form>
+
+
+{% endblock content%}
+
