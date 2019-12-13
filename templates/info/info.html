@@ -8,25 +8,60 @@
 
     <div><input id = 'update_button_info' type="submit" value="Update"></div>
 
-    <div> {{form.class_name}}</div>
-    <div> {{form.level}}</div>
-    <div> {{form.background}}</div>
-    <div> {{form.faction}}</div>
-    <div> {{form.race}}</div>
-    <div> {{form.alignment}}</div>
-    <div> {{form.exp_points}}</div>
-    <div> {{form.dci_number}}</div>
-    <div> {{form.personality_traits}}</div>
-    <div> {{form.ideals}}</div>
-    <div> {{form.bonds}}</div>
-    <div> {{form.flaws}}</div>
-    <div> {{form.background_story}}</div>
-    <div> {{form.oth_prof_lan}}</div>
-    <div> {{form.appearance}}</div>
+    <div id = 'info_general'>
+        <div id = 'row_general_val_1' class = 'row row_general_val'>
+            <div class = 'col-4 row_generals'>{{form.class_name}}</div>
+            <div class = 'col-4 row_generals'>{{form.level}}</div>
+            <div class = 'col-4 row_generals'>{{form.background}}</div>
+        </div>
+        <div id = 'row_general_meta_1' class = 'row row_general_meta'>
+            <div class = 'col-4 row_generals'>CLASS</div>
+            <div class = 'col-4 row_generals'>LEVEL</div>
+            <div class = 'col-4 row_generals'>BACKGROUND</div>
+        </div>
+        <div id = 'row_general_val_2' class = 'row row_general_val'>
+            <div class = 'col-4 row_generals'>{{form.faction}}</div>
+            <div class = 'col-4 row_generals'>{{form.race}}</div>
+            <div class = 'col-4 row_generals'>{{form.alignment}}</div>
+        </div>
+        <div id = 'row_general_meta_2' class = 'row row_general_meta'>
+            <div class = 'col-4 row_generals'>FACTION</div>
+            <div class = 'col-4 row_generals'>RACE</div>
+            <div class = 'col-4 row_generals'>ALIGNMENT</div>
+        </div>
+        <div id = 'row_general_val_3' class = 'row row_general_val'>
+            <div class = 'col-4 row_generals'>{{form.exp_points}}</div>
+            <div class = 'col-4 row_generals' >{{form.dci_number}}</div>
+        </div>
+        <div id = 'row_general_meta_3' class = 'row row_general_meta'>
+            <div class = 'col-4 row_generals'>EXP POINTS</div>
+            <div class = 'col-4 row_generals'>DCI NUMBER</div>
+        </div>
+    </div>
+
+    <div id = 'info_personality'>
+        <div class = 'row row_personality_meta'>Personality traits</div>
+        <div class = 'row row_personality_val'> {{form.personality_traits}}</div>
+        <div class = 'row row_personality_meta'>Ideals</div>
+        <div class = 'row row_personality_val'> {{form.ideals}}</div>
+        <div class = 'row row_personality_meta'>Bonds</div>
+        <div class = 'row row_personality_val'> {{form.bonds}}</div>
+        <div class = 'row row_personality_meta'>Flaws</div>
+        <div class = 'row row_personality_val'> {{form.flaws}}</div>
+    </div>
+
+    <div id = 'info_description'>
+        <div class = 'row'> <div class = 'col row_description_meta'> Other Proficiencies & Languages</div></div>
+        <div class = 'row row_description_val'> {{form.oth_prof_lan}}</div>
+        <div class = 'row'> <div class = 'col row_description_meta'> Background Story</div></div>
+        <div class = 'row row_description_val'> {{form.background_story}}</div>
+        <div class = 'row'> <div class = 'col row_description_meta'> Appearance</div></div>
+        <div class = 'row row_description_val'> {{form.appearance}}</div>
+    </div>
 
 </form>
 
-
+<br><br><br>
 
 {% endblock content%}
 

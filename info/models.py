@@ -14,12 +14,12 @@ class MyInfo(models.Model):
     alignment = models.CharField(max_length=25, blank = True, null = True)
     exp_points = models.PositiveSmallIntegerField(blank = True, null = True)
     dci_number = models.PositiveSmallIntegerField(blank = True, null = True)
-    personality_traits = models.CharField(max_length=80, blank = True, null = True)
-    ideals = models.CharField(max_length=80, blank = True, null = True)
-    bonds = models.CharField(max_length=80, blank = True, null = True)
-    flaws = models.CharField(max_length=80, blank = True, null = True)
-    background_story = models.CharField(max_length=2500, blank = True, null = True)
-    oth_prof_lan = models.CharField(max_length=2000, blank = True, null = True)
+    personality_traits = models.CharField(max_length=125, blank = True, null = True)
+    ideals = models.CharField(max_length=125, blank = True, null = True)
+    bonds = models.CharField(max_length=125, blank = True, null = True)
+    flaws = models.CharField(max_length=125, blank = True, null = True)
+    background_story = models.CharField(max_length=1000, blank = True, null = True)
+    oth_prof_lan = models.CharField(max_length=1000, blank = True, null = True)
     appearance = models.CharField(max_length=250, blank = True, null = True)
 
 
