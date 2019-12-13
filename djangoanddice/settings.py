@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'sheet',
     'spells',
-    'equipment'
+    'equipment',
+    'info'
 ]
 
 MIDDLEWARE = [

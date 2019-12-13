@@ -1,0 +1,32 @@
+{% extends 'header/header.html'%}
+{% block content %}
+
+{% load staticfiles %}
+
+<form id = "Info_form" method="post">
+    {% csrf_token %}
+
+    <div><input id = 'update_button_info' type="submit" value="Update"></div>
+
+    <div> {{form.class_name}}</div>
+    <div> {{form.level}}</div>
+    <div> {{form.background}}</div>
+    <div> {{form.faction}}</div>
+    <div> {{form.race}}</div>
+    <div> {{form.alignment}}</div>
+    <div> {{form.exp_points}}</div>
+    <div> {{form.dci_number}}</div>
+    <div> {{form.personality_traits}}</div>
+    <div> {{form.ideals}}</div>
+    <div> {{form.bonds}}</div>
+    <div> {{form.flaws}}</div>
+    <div> {{form.background_story}}</div>
+    <div> {{form.oth_prof_lan}}</div>
+    <div> {{form.appearance}}</div>
+
+</form>
+
+
+
+{% endblock content%}
+
