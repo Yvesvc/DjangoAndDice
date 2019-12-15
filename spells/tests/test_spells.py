@@ -6,8 +6,13 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from django.test.utils import override_settings
 from spells.models import Spells5E
 from selenium.common.exceptions import NoSuchElementException
+
+#Path to Chrome Webdriver
+path_chromedriver = r"C:\Users\Yves Vc\Downloads\chromedriver_win32\79\chromedriver.exe"
+
 
 #login and registration
 def login_registration(selenium, server_url):
@@ -38,6 +43,7 @@ def login_registration(selenium, server_url):
 
     submit.send_keys(Keys.RETURN)
 
+
     return selenium
 
 
@@ -45,6 +51,7 @@ def login_registration(selenium, server_url):
 Verify that the main spell view is not publicly accessible, but redirects
 """
 
+@pytest.mark.django_db
 def test_private_view_spells_not_logged_in(client):
     url = urls.reverse("spells_index")
     resp = client.get(url)
@@ -53,6 +60,8 @@ def test_private_view_spells_not_logged_in(client):
 """
 Verify that the main spells view is accessible, if logged in
 """
+
+@pytest.mark.django_db
 def test_private_view_equipment_logged_in(admin_client):
     url = urls.reverse("spells_index")
     resp = admin_client.get(url)
@@ -70,7 +79,7 @@ Verify that if user accesses main spell view and
 class SpellShowRecord(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
+        self.selenium = webdriver.Chrome(path_chromedriver)
         super(SpellShowRecord, self).setUp()
 
 
@@ -78,7 +87,8 @@ class SpellShowRecord(LiveServerTestCase):
         self.selenium.quit()
         super(SpellShowRecord, self).tearDown()
 
-    def test_show_user_record(self):
+    @override_settings(DEBUG=True)
+    def test_show_spells_user_record(self):
         selenium = self.selenium
 
         # register and login
@@ -111,7 +121,7 @@ Verify add Spell AJAX (spells.js): Spell added immediately
 class add_spell_ajax(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
+        self.selenium = webdriver.Chrome(path_chromedriver)
         super(add_spell_ajax, self).setUp()
         Spells5E.objects.create(name='Aid', level = '2')
 
@@ -119,7 +129,7 @@ class add_spell_ajax(LiveServerTestCase):
         self.selenium.quit()
         super(add_spell_ajax, self).tearDown()
 
-    @pytest.mark.django_db
+    @override_settings(DEBUG=True)
     def test_add_spell_ajax(self):
         selenium = self.selenium
 
@@ -149,7 +159,7 @@ Verify delete Spell AJAX (spells.js): Spell deleted immediately
 class delete_spell_ajax(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
+        self.selenium = webdriver.Chrome(path_chromedriver)
         super(delete_spell_ajax, self).setUp()
         Spells5E.objects.create(name='Aid', level = '2')
         Spells5E.objects.create(name='Absorb Elements', level='1')
@@ -159,7 +169,7 @@ class delete_spell_ajax(LiveServerTestCase):
         self.selenium.quit()
         super(delete_spell_ajax, self).tearDown()
 
-    @pytest.mark.django_db
+    @override_settings(DEBUG=True)
     def test_delete_spell_ajax(self):
         selenium = self.selenium
 

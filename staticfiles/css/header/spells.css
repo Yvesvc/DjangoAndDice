@@ -4,6 +4,9 @@
 #Spells_metadata_form{
 padding-top: 2vw;
 padding-bottom: 2vw;
+
+
+
 }
 
 #metadata {
@@ -13,7 +16,7 @@ padding-right:10vw;
 }
 
 .metadata_txt {
-font-size: 1.5vw;
+font-size: 2vw;
 }
 
 .metadata_col{
@@ -29,10 +32,15 @@ margin-top:1vw;
 margin-left:1vw;
 height: 5vw;
 width: 10vw;
-font-size:2vw;
+font-size:2.2vw;
 }
 
 /*SPELLS SLOTS */
+
+#btnspellform{
+font-size:2.5vw;
+margin-bottom:0.5vh;
+}
 
 #spells_slots {
 margin-top:1vh;
@@ -47,7 +55,6 @@ margin-bottom:0.5vh;
 
 .spells_slots_lvl{
 font-size:1.5vw;
-background-color:#B0C4DE;
 margin-right:0.25vw;
 width:18%;
 
@@ -76,16 +83,53 @@ font-size:1.5vw;
 }
 
 .spells_slots_info_col{
-width: 33%;
 text-align:center;
 }
 
+.spells_slots_info_col_1{
+width:25%;
+}
+
+.spells_slots_info_col_2{
+width:32%;
+}
+
+.spells_slots_info_col_3{
+width:40%;
+padding-left: 1.5vw;
+}
 
 /*MY SPELLS */
 
 .lvl{
-border: 2px solid #73AD21;
-      border-radius:5px;
+border: 2px solid #00004d;
+border-radius:5px;
+width:100%;
+height:3.5vh;
+margin-left:0vw;
+margin-bottom:0.5vh;
+}
+
+.lvl_val{
+margin-left:0vw;
+width:10%;
+height:100%;
+text-align:center;
+border: 2px solid #00004d;
+border-radius:5px;
+font-size:7.5pt
+}
+
+.lvl_0 {
+border: 2px solid #696969;
+}
+
+.lvl_val_0 {
+border: 2px solid #696969;
+}
+
+.my_spells_spell_name{
+font-size: 4vw;
 }
 
 .my_spells_spell_row{
@@ -100,4 +144,9 @@ font-size: 3vw;
 
 .my_spells_spell_info_el{
 margin-bottom:0.5vh;
+font-weight:bold;
+}
+
+.my_spells_spell_info_el_desc {
+border-bottom: 1px dashed
 }

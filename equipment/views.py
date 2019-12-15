@@ -3,11 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import MyEquipment
 from .forms import EquipmentForm
 
+
 @login_required
-def index(request):
-    return HttpResponse('test')
-
-
 def index(request):
     #GET request
     if request.method == 'GET':
