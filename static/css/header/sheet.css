@@ -78,7 +78,7 @@ SHEET
           grid-template-areas:
             'char_name      char_name   char_name   char_name   char_name   char_name'
             'strength       insp_prof   insp_prof   ac_init_sp  ac_init_sp  ac_init_sp'
-            'strength       saving      saving      hitpoint    hitpoint      hitpoint'
+            'strength       saving      saving      hitpoint    hitpoint    hitpoint'
             'dexterity      saving      saving      hitpoint    hitpoint    hitpoint'
             'constitution   saving      saving      hitpoint    hitpoint    hitpoint'
             'constitution   skills      dice_death      dice_death  dice_death  dice_death'

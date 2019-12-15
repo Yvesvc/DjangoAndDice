@@ -24,7 +24,7 @@ class Sheet_Form(forms.ModelForm):
         model = Sheet
         #Enable to display all Sheet_form fields in HTML
         fields = '__all__'
-        #Add class/id names to Sheet_forn fields
+        #Add class/id names to Sheet_form fields
         widgets = {
             'level': forms.NumberInput(attrs = {'style': 'width:30%; text-align:center'}),
 

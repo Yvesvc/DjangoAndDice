@@ -1,0 +1,69 @@
+
+
+/*FORM*/
+
+#Info_form{
+background-image: linear-gradient(#EDEAE5, #B0C4DE, #B0C4DE,#B0C4DE, #EDEAE5)
+}
+
+/*UPDATE BUTTON */
+
+#update_button_info{
+margin-bottom:2vh;
+font-size:2vw;
+}
+
+/*INFO_GENERAL*/
+
+#info_general{
+width: 80%;
+margin: 0 auto;
+padding: 0.25vh;
+}
+
+.row_general_1 {
+width:100%;
+}
+
+.row_generals{
+padding:0;
+}
+
+.row_general_meta{
+text-align:center;
+font-size:2vw;
+padding-bottom:1vh;
+}
+
+/*INFO_PERSONALITY*/
+
+#info_personality{
+width: 90%;
+margin: 0 auto;
+padding: 2vw;
+}
+
+.row_personality_meta{
+font-size:3.5vw;
+}
+
+.row_personality_val{
+margin-bottom:1.5vh;
+}
+
+/*INFO_DESCRIPTION */
+
+#info_description{
+width: 90%;
+margin: 0 auto;
+padding: 0.25vh;
+}
+
+.row_description_meta{
+text-align:center;
+font-size:4vw;
+}
+
+.row_description_val{
+margin-bottom:1vh;
+}
