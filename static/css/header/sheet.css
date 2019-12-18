@@ -244,7 +244,7 @@ SHEET
     .ac_init_sp {
     margin-left:0vw;
     height:7vh;
-    width:80%;
+    width:90%;
     }
 
     .ac_init_sp_txt {
@@ -258,6 +258,7 @@ SHEET
      padding-top:2vw;
      margin-left:0vw;
      text-align:center;
+     width:95%;
      }
 
      /*Dice death */
