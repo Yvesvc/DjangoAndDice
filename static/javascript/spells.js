@@ -112,3 +112,37 @@ $(document).ready(function(){
       }
   });
 });
+
+/*(Un)prep spell */
+
+
+
+$(document).ready(function(){
+var timeout_id = 0,
+    hold_time = 1000,
+    hold_trigger = $('.my_spells_spell_name');
+
+
+
+hold_trigger.mousedown(function() {
+    timeout_id = setTimeout(menu_toggle, hold_time);
+}).bind('mouseup mouseleave', function() {
+    clearTimeout(timeout_id);
+});
+
+function menu_toggle() {
+ alert('hello');
+}
+
+});
+
+$(document).ready(function(){
+$(".my_spells_spell_name").bind("touchstart", function(e) {
+    timeout_id = setTimeout(function(){alert('mobile');}, 1000);
+}).bind("touchend", function() {
+    clearTimeout(timeout_id);
+});
+
+
+});
+

@@ -55,9 +55,7 @@ def index (request):
     #get all corresponding records from Spells5E
     my_spells_in_Spells5E= Spells5E.objects.filter(name__in=my_spells_user_list)
 
-
     #show all those records
-
 
 
     return render (request, 'spells/spells.html', {'Spells5Eform':Spells5Eform, 'Metadataform':Metadataform, 'my_spells_in_Spells5E':my_spells_in_Spells5E })
