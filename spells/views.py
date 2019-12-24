@@ -5,9 +5,10 @@ from .forms import Spells5EForm, MetadataForm
 from .models import spells_metadata, My_Spells, Spells5E
 from users.models import User_Extended
 from django.contrib.auth.decorators import login_required
+from django.forms.models import model_to_dict
 
 @login_required
-def index (request):
+def index(request):
     #GET
     if request.method == 'GET':
         if request.method == 'GET':
@@ -55,16 +56,30 @@ def index (request):
     #get all corresponding records from Spells5E
     my_spells_in_Spells5E= Spells5E.objects.filter(name__in=my_spells_user_list)
 
+    #convert corresponding records from Spells5E to list of dictionaries
+    my_spells_in_Spells5E_list_of_dict = list(my_spells_in_Spells5E.values())
 
-    #show all those records
+    #convert user's records of my_spells to list of dictionaries
+    my_spells_user_list_of_dict = list(my_spells_user.values())
+
+    #create new list of dictionaries that is join of my_spells and Spells5E
+    my_spells_user_and_Spells5E =[]
+    for my_spell_el in my_spells_user_list_of_dict:
+        for Spells5E_el in my_spells_in_Spells5E_list_of_dict:
+            if my_spell_el.get('name') == Spells5E_el.get('name'):
+                temp_dict = Spells5E_el
+                temp_dict['prepared'] = my_spell_el.get('prepared')
+                #create spell_name_id for HTML id attribute
+                temp_dict['spell_name_id'] = my_spell_el.get('name').replace(' ', '_').replace('\'', '_').lower()
+                my_spells_user_and_Spells5E.append(temp_dict)
 
 
 
-    return render (request, 'spells/spells.html', {'Spells5Eform':Spells5Eform, 'Metadataform':Metadataform, 'my_spells_in_Spells5E':my_spells_in_Spells5E })
+    return render (request, 'spells/spells.html', {'Spells5Eform':Spells5Eform, 'Metadataform':Metadataform, 'my_spells_user_and_Spells5E':my_spells_user_and_Spells5E })
 
 
 
-def addlevel (request):
+def addlevel(request):
     if request.is_ajax() and request.method == 'POST':
         name_spell_form = request.POST['name']
         user_name = User_Extended.objects.get(username=request.user.username)
@@ -109,7 +124,7 @@ def addlevel (request):
             #return as json
             return HttpResponse(json.dumps(data), content_type = 'application/json')
 
-def deletelevel (request):
+def deletelevel(request):
     if request.is_ajax() and request.method == 'POST':
         #Find corresponding record in db and delete
         name_spell= request.POST['spell_name_key']
@@ -123,3 +138,20 @@ def deletelevel (request):
         data = deleted_spell
         #return as json
         return HttpResponse(json.dumps(data), content_type = 'application/json')
+
+
+def preparationspell(request):
+    if request.is_ajax() and request.method == 'POST':
+        #Find corresponding record in My_Spells
+        name_spell = request.POST['hold_trigger_name_key']
+        user_name = User_Extended.objects.get(username=request.user.username)
+        spell_to_alter_preparation_status = My_Spells.objects.get(username = user_name, name = name_spell)
+        #Update preparation status of spell
+        if spell_to_alter_preparation_status.prepared:
+            spell_to_alter_preparation_status.prepared = False
+        else:
+            spell_to_alter_preparation_status.prepared = True
+        spell_to_alter_preparation_status.save()
+        data= {}
+
+    return HttpResponse(json.dumps(data), content_type='application/json')

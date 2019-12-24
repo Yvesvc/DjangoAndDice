@@ -1,5 +1,5 @@
 from django import forms
-from .models import Spells5E, spells_metadata
+from .models import Spells5E, spells_metadata, My_Spells
 
 
 meta_style = 'width:10vw; text-align:center'
@@ -41,10 +41,9 @@ class MetadataForm (forms.ModelForm):
         }
 
 
-'''
+
 class MySpellsForm (forms.ModelForm):
     class Meta:
         model = My_Spells
-        fields = ['scability', 'ssdc', 'sabonus', 'username']
+        fields = ['name']
 
-'''

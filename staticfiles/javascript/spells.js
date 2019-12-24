@@ -17,7 +17,7 @@ $(document).on('submit', '#add_spell_button', function(e){
             /*If spell needs to be added*/
             if ($.isEmptyObject(data) == false) {
                 var spell_level = data.level;
-                var part1 = '<div class = "my_spells_spell">';
+                var part1 = '<div id= "added_spell_ajax" class = "my_spells_spell_name">';
                 var part2 = '<div class = "my_spells_spell_info"> </div> </div>';
                 if (spell_level.indexOf("Cantrip") >= 0) {
                     $("#my_spells_lvl0").append(
@@ -69,6 +69,7 @@ $(document).on('submit', '#add_spell_button', function(e){
                     part1 + data.name + part2
                     );
                    }
+                 $("#added_spell_ajax").css('font-size', '4vw');
             }
         }
     });
@@ -112,3 +113,62 @@ $(document).ready(function(){
       }
   });
 });
+
+
+/*Preparation spell */
+
+$(document).ready(function(){
+
+    var timeout_id = 0;
+    var hold_time = 1000;
+    var hold_trigger = $('.my_spells_spell_name');
+    var hold_trigger_name = '';
+    var hold_trigger_id = '';
+    var hold_trigger_status = '';
+
+    /*Desktop*/
+    hold_trigger.mousedown(function() {
+        /*get name, id and color (aka status) of selected spell */
+        hold_trigger_name = $(this).html();
+        hold_trigger_id = $(this).attr('id');
+        hold_trigger_color = $(this).css('color');
+        timeout_id = setTimeout(function(){update_spell_status(hold_trigger_name,hold_trigger_id,hold_trigger_color);}, hold_time);
+    /*when mouse leaves spell: reset timeout_id*/
+    }).bind('mouseup mouseleave', function() {
+        clearTimeout(timeout_id);});
+
+    /*Mobile*/
+    hold_trigger.bind("touchstart", function(e) {
+        hold_trigger_name = $(this).html();
+        hold_trigger_id = $(this).attr('id');
+        hold_trigger_color = $(this).css('color');
+        timeout_id = setTimeout(function(){update_spell_status(hold_trigger_name,hold_trigger_id,hold_trigger_color );}, hold_time);
+    }).bind("touchend", function() {
+        clearTimeout(timeout_id);});
+
+});
+
+function update_spell_status(hold_trigger_name,hold_trigger_id,hold_trigger_color) {
+    $.ajax({
+        type: 'POST',
+        //go to this URL
+        url: '/spells/preparationspell',
+        //with this data
+        data: {
+            hold_trigger_name_key:hold_trigger_name,
+            hold_trigger_color_key:hold_trigger_color,
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+        },
+        //if view from url: '/spells/preparationspell/ succesfully performed, do the following
+        success:function(){
+            /*Change color (preparation status) of spell*/
+            hold_trigger_id_selector = $('#'+hold_trigger_id);
+            if (hold_trigger_color.indexOf("0, 0, 0") >=  0) {
+                hold_trigger_id_selector.css("color", "grey");
+            }
+            else {
+                hold_trigger_id_selector.css("color", "black");
+            }
+        }
+    });
+}

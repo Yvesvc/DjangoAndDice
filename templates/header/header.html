@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/header/spells.css' %}">
     <link rel="stylesheet" href="{% static 'css/header/equipment.css' %}">
     <link rel="stylesheet" href="{% static 'css/header/info.css' %}">
+    <script src="{% static 'javascript/header.js' %}"></script>
     <title>Django and Dice </title>
 
 </head>
@@ -54,7 +55,7 @@
           <div class="col text-center my-auto"><a href = "{%url 'equipment_index' %}" style = "color:inherit;"><i class="fa fa-wrench"></i></a></div>
           <div class="col text-center my-auto"><a href = "{%url 'index' %}" style = "color:inherit;"><i class="fa fa-file"></i></a></div>
           <div class="col text-center my-auto"><a href = "{%url 'spells_index' %}" style = "color:inherit;"><i class="fa fa-magic"></i></a></div>
-          <div class="col text-center my-auto"><i class="fa fa-puzzle-piece"></i></div>
+          <div class="col text-center my-auto"><a href = "{%url 'info_index' %}" style = "color:inherit;"><i class="fa fa-puzzle-piece"></i></a></div>
         </div>
 
 

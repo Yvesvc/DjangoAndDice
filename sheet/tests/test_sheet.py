@@ -6,14 +6,18 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from sheet.models import Sheet
+from django.test.utils import override_settings
 from spells.tests.test_spells import login_registration
+from spells.tests.test_spells import path_chromedriver
 
 
 """
 Verify that the main sheet view is not publicly accessible, but redirects
 """
+
+@pytest.mark.django_db
 @pytest.mark.parametrize('view_name', ['index'])
-def test_private_view_spells_not_logged_in(view_name, client):
+def test_private_view_sheet_not_logged_in(view_name, client):
     url = urls.reverse(view_name)
     resp = client.get(url)
     assert resp.status_code == 302
@@ -21,8 +25,10 @@ def test_private_view_spells_not_logged_in(view_name, client):
 """
 Verify that the main sheet view is accessible, if logged in
 """
+
+@pytest.mark.django_db
 @pytest.mark.parametrize('view_name', ['index'])
-def test_private_view_spells_logged_in(view_name, admin_client):
+def test_private_view_sheet_logged_in(view_name, admin_client):
     url = urls.reverse(view_name)
     resp = admin_client.get(url)
     assert resp.status_code == 200
@@ -30,6 +36,8 @@ def test_private_view_spells_logged_in(view_name, admin_client):
 """
 Verify that if user accesses main sheet view and has no record, exception is handled
 """
+
+@pytest.mark.django_db
 @pytest.mark.parametrize('view_name', ['index'])
 def test_main_no_expection_logged_in(view_name,client, django_user_model):
     username = "user1"
@@ -47,14 +55,15 @@ Verify that if user accesses main sheet view and has a record, record is returne
 class SheetShowRecord(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
+        self.selenium = webdriver.Chrome(path_chromedriver)
         super(SheetShowRecord, self).setUp()
 
     def tearDown(self):
         self.selenium.quit()
         super(SheetShowRecord, self).tearDown()
 
-    def test_show_user_record(self):
+    @override_settings(DEBUG=True)
+    def test_show_sheet_user_record(self):
         selenium = self.selenium
 
         # register and login
@@ -73,42 +82,19 @@ Verify that if user accesses main sheet view and
 class SheetOneRecord(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
+        self.selenium = webdriver.Chrome(path_chromedriver)
         super(SheetOneRecord, self).setUp()
 
     def tearDown(self):
         self.selenium.quit()
         super(SheetOneRecord, self).tearDown()
 
-    @pytest.mark.django_db
-    def test_show_user_record(self):
+    @override_settings(DEBUG=True)
+    def test_show_update_sheet_user_record(self):
         selenium = self.selenium
 
-        #register
-        selenium.get(self.live_server_url + '/user/registration')
-
-        username = selenium.find_element_by_name('username')
-        charactername = selenium.find_element_by_name('charactername')
-        password1 = selenium.find_element_by_name('password1')
-        password2 = selenium.find_element_by_name('password2')
-        sign_up = selenium.find_element_by_id('register_button')
-
-        username.send_keys('testuser1')
-        charactername.send_keys('Imperator__REX')
-        password1.send_keys('Kingsubject1')
-        password2.send_keys('Kingsubject1')
-        sign_up.send_keys(Keys.RETURN)
-
-        #login
-
-        username = selenium.find_element_by_name('username')
-        password = selenium.find_element_by_name('password')
-        submit = selenium.find_element_by_id('login_button')
-
-        username.send_keys('testuser1')
-        password.send_keys('Kingsubject1')
-
-        submit.send_keys(Keys.RETURN)
+        # register and login
+        selenium = login_registration(selenium, self.live_server_url)
 
         #create form
         field = selenium.find_element_by_id('id_atk_spell_name_1')
@@ -135,42 +121,19 @@ Verify necessary elemets are present in HTML for sheet.JS to function
 class ElementsJS(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Chrome(r"C:\Users\Yves Vc\Downloads\chromedriver_win32\chromedriver.exe")
+        self.selenium = webdriver.Chrome(path_chromedriver)
         super(ElementsJS, self).setUp()
 
     def tearDown(self):
         self.selenium.quit()
         super(ElementsJS, self).tearDown()
 
-    @pytest.mark.django_db
-    def test_show_user_record(self):
+    @override_settings(DEBUG=True)
+    def test_element_JS_present(self):
         selenium = self.selenium
 
-        #register
-        selenium.get(self.live_server_url + '/user/registration')
-
-        username = selenium.find_element_by_name('username')
-        charactername = selenium.find_element_by_name('charactername')
-        password1 = selenium.find_element_by_name('password1')
-        password2 = selenium.find_element_by_name('password2')
-        sign_up = selenium.find_element_by_id('register_button')
-
-        username.send_keys('testuser1')
-        charactername.send_keys('Imperator__REX')
-        password1.send_keys('Kingsubject1')
-        password2.send_keys('Kingsubject1')
-        sign_up.send_keys(Keys.RETURN)
-
-        #login
-
-        username = selenium.find_element_by_name('username')
-        password = selenium.find_element_by_name('password')
-        submit = selenium.find_element_by_id('login_button')
-
-        username.send_keys('testuser1')
-        password.send_keys('Kingsubject1')
-
-        submit.send_keys(Keys.RETURN)
+        # register and login
+        selenium = login_registration(selenium, self.live_server_url)
 
         #check for elements
         element1 = selenium.find_element_by_id('skill_row_last')

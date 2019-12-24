@@ -3,16 +3,13 @@
 /*FORM*/
 
 #Info_form{
-background-image: linear-gradient(#EDEAE5, #B0C4DE, #B0C4DE,#B0C4DE, #EDEAE5);
-border-radius: 25px;
-padding-bottom:2vh;
+background-image: linear-gradient(#EDEAE5, #B0C4DE, #B0C4DE,#B0C4DE, #EDEAE5)
 }
 
 /*UPDATE BUTTON */
 
 #update_button_info{
 margin-bottom:2vh;
-margin-left:3.5vw;
 font-size:2vw;
 }
 
