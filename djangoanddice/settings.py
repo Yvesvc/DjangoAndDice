@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGOANDDICE_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'djangoanddice.herokuapp.com', '192.168.1.49']
+ALLOWED_HOSTS = ['127.0.0.1', 'djangoanddice.herokuapp.com', '192.168.1.49','192.168.0.140']
 
 AUTH_USER_MODEL = "users.User_Extended"
 

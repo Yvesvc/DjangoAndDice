@@ -28,8 +28,8 @@ padding-bottom:1vw;
 }
 
 #btnmetadataform{
-margin-top:1vw;
-margin-left:1vw;
+margin-top:0vh;
+padding-left:1vw;
 height: 5vw;
 width: 10vw;
 font-size:2.2vw;
@@ -39,7 +39,7 @@ font-size:2.2vw;
 
 #btnspellform{
 font-size:2.5vw;
-margin-bottom:0.5vh;
+margin-bottom:1vh;
 }
 
 #spells_slots {
@@ -130,6 +130,19 @@ border: 2px solid #696969;
 
 .my_spells_spell_name{
 font-size: 4vw;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+.prepared{
+color:black;
+}
+
+.unprepared {
+color:grey;
 }
 
 .my_spells_spell_row{

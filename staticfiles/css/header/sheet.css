@@ -164,6 +164,14 @@ SHEET
 
     /*ins_prof*/
 
+    .row_insp_prof{
+    margin-left:2vw;
+    padding-bottom:0.5vh;
+    }
+
+    .col_insp_prof{
+    width:35%;
+    }
 
     #insp_el11 {
     padding-left:0;
@@ -244,7 +252,7 @@ SHEET
     .ac_init_sp {
     margin-left:0vw;
     height:7vh;
-    width:80%;
+    width:90%;
     }
 
     .ac_init_sp_txt {
@@ -258,6 +266,7 @@ SHEET
      padding-top:2vw;
      margin-left:0vw;
      text-align:center;
+     width:95%;
      }
 
      /*Dice death */
@@ -270,6 +279,7 @@ SHEET
 
      .dice_death_right {
      height:50%;
+     padding-bottom:0.25vh;
      }
 
      .dice_death_right_txt{
@@ -281,6 +291,9 @@ SHEET
      font-size:1.75vw;
      }
 
+    #dice_death_txt_death_saves{
+    font-size:1.5vw;
+    }
 
     /*atk_spell*/
 
@@ -295,6 +308,7 @@ SHEET
     .atk_spell_info{
     height:5%;
     font-size:5pt;
+    margin-bottom:0.9vh;
     }
     .atk_spell_row{
     height:20%;

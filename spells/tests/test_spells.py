@@ -35,6 +35,10 @@ def login_registration(selenium, server_url):
     sign_up.send_keys(Keys.RETURN)
 
     # login
+        #accept alert window size too big
+    alert_window = selenium.switch_to_alert()
+    alert_window.accept()
+
     username = selenium.find_element_by_name('username')
     password = selenium.find_element_by_name('password')
     submit = selenium.find_element_by_id('login_button')
@@ -148,7 +152,7 @@ class add_spell_ajax(LiveServerTestCase):
             if option.text == 'Aid':
                 option.click()
                 add_spell_button.click()
-                added_spell = selenium.find_element_by_class_name('my_spells_spell')
+                added_spell = selenium.find_element_by_id('added_spell_ajax')
                 add_spell_value = added_spell.text
                 break
         assert 'Aid' == add_spell_value
