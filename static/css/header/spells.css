@@ -137,6 +137,14 @@ font-size: 4vw;
 user-select: none;
 }
 
+.prepared{
+color:black;
+}
+
+.unprepared {
+color:grey;
+}
+
 .my_spells_spell_row{
 display:inline-block;
 }

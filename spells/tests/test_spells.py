@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import Select
 from django.test.utils import override_settings
 from spells.models import Spells5E
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver import ActionChains
 
 #Path to Chrome Webdriver
 path_chromedriver = r"C:\Users\Yves Vc\Downloads\chromedriver_win32\79\chromedriver.exe"
@@ -213,4 +214,45 @@ class delete_spell_ajax(LiveServerTestCase):
             assert 1 == 1
 
 
+"""
+Verify Preparation Spell AJAX (spells.js): Spell preparation status updated immediately and permanent
+"""
+class preparation_spell_ajax(LiveServerTestCase):
 
+    def setUp(self):
+        self.selenium = webdriver.Chrome(path_chromedriver)
+        super(preparation_spell_ajax, self).setUp()
+        Spells5E.objects.create(name='Aid', level = '2')
+        Spells5E.objects.create(name='Absorb Elements', level='1')
+        Spells5E.objects.create(name='Animal Friendship', level='1')
+
+    def tearDown(self):
+        self.selenium.quit()
+        super(preparation_spell_ajax, self).tearDown()
+
+    @override_settings(DEBUG=True)
+    def test_preparation_spell_ajax(self):
+        selenium = self.selenium
+
+        # register and login
+        selenium = login_registration(selenium, self.live_server_url)
+
+        selenium.get(self.live_server_url + '/spells')
+
+        selected_spell = selenium.find_element_by_id('id_name')
+        add_spell_button = selenium.find_element_by_name('btnSpells5Eform')
+
+
+        #Add Spells 'Aid', 'Absorb Elements' and 'Animal Friendship'
+        for option in selected_spell.find_elements_by_tag_name("option"):
+            if option.text == 'Aid' or option.text == 'Absorb Elements' or option.text == 'Animal Friendship':
+                option.click()
+                add_spell_button.click()
+
+        selenium.refresh()
+
+        selected_spell = selenium.find_element_by_id('animal_friendship')
+
+        '''TEST STILL TO BE MADE'''
+
+        assert 0 == 1

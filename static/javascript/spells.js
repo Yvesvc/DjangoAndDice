@@ -113,36 +113,61 @@ $(document).ready(function(){
   });
 });
 
-/*(Un)prep spell */
 
-
+/*Preparation spell */
 
 $(document).ready(function(){
-var timeout_id = 0,
-    hold_time = 1000,
-    hold_trigger = $('.my_spells_spell_name');
 
+    var timeout_id = 0;
+    var hold_time = 1000;
+    var hold_trigger = $('.my_spells_spell_name');
+    var hold_trigger_name = '';
+    var hold_trigger_id = '';
+    var hold_trigger_status = '';
 
+    /*Desktop*/
+    hold_trigger.mousedown(function() {
+        /*get name, id and color (aka status) of selected spell */
+        hold_trigger_name = $(this).html();
+        hold_trigger_id = $(this).attr('id');
+        hold_trigger_color = $(this).css('color');
+        timeout_id = setTimeout(function(){update_spell_status(hold_trigger_name,hold_trigger_id,hold_trigger_color);}, hold_time);
+    /*when mouse leaves spell: reset timeout_id*/
+    }).bind('mouseup mouseleave', function() {
+        clearTimeout(timeout_id);});
 
-hold_trigger.mousedown(function() {
-    timeout_id = setTimeout(menu_toggle, hold_time);
-}).bind('mouseup mouseleave', function() {
-    clearTimeout(timeout_id);
+    /*Mobile*/
+    hold_trigger.bind("touchstart", function(e) {
+        hold_trigger_name = $(this).html();
+        hold_trigger_id = $(this).attr('id');
+        hold_trigger_color = $(this).css('color');
+        timeout_id = setTimeout(function(){update_spell_status(hold_trigger_name,hold_trigger_id,hold_trigger_color );}, hold_time);
+    }).bind("touchend", function() {
+        clearTimeout(timeout_id);});
+
 });
 
-function menu_toggle() {
- alert('hello');
+function update_spell_status(hold_trigger_name,hold_trigger_id,hold_trigger_color) {
+    $.ajax({
+        type: 'POST',
+        //go to this URL
+        url: '/spells/preparationspell',
+        //with this data
+        data: {
+            hold_trigger_name_key:hold_trigger_name,
+            hold_trigger_color_key:hold_trigger_color,
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+        },
+        //if view from url: '/spells/preparationspell/ succesfully performed, do the following
+        success:function(){
+            /*Change color (preparation status) of spell*/
+            hold_trigger_id_selector = $('#'+hold_trigger_id);
+            if (hold_trigger_color.indexOf("0, 0, 0") >=  0) {
+                hold_trigger_id_selector.css("color", "grey");
+            }
+            else {
+                hold_trigger_id_selector.css("color", "black");
+            }
+        }
+    });
 }
-
-});
-
-$(document).ready(function(){
-$(".my_spells_spell_name").bind("touchstart", function(e) {
-    timeout_id = setTimeout(function(){alert('mobile');}, 1000);
-}).bind("touchend", function() {
-    clearTimeout(timeout_id);
-});
-
-
-});
-
